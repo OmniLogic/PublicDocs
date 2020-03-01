@@ -23,6 +23,11 @@
       "name": "Sales Pipeline API",
       "description": "Sales Pipeline API for personal assistant",
       "href": "sales-pipeline-api"
+    },
+    {
+      "name": "TTS API",
+      "description": "TTS API for personal assistant",
+      "href": "tts-api"
     }
   ]
 }
