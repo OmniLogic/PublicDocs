@@ -1,0 +1,28 @@
+{
+  "name": "Scribo",
+  "teamId": "scribo",
+  "logoImg": "logo.png",
+  "bannerTitle": "Developer Hub",
+  "bannerDescription": "Welcome to Scribo developer hub.",
+  "theme": {
+    "primaryColor": "#6190EA",
+    "headerFontColor": "#fff"
+  },
+  "menus": [
+    {
+      "label": "About",
+      "href": "https://scribo.dev"
+    },
+    {
+      "label": "Carrer",
+      "href": "https://scribo.dev"
+    }
+  ],
+  "docs": [
+    {
+      "name": "Scribo API",
+      "description": "Scribo REST API",
+      "href": "scribo-api"
+    }
+  ]
+}
