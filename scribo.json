@@ -1,28 +1,28 @@
 {
-  "name": "Scribo",
-  "teamId": "scribo",
+  "name": "Omnilogic",
+  "teamId": "omnilogic",
   "logoImg": "logo.png",
   "bannerTitle": "Developer Hub",
-  "bannerDescription": "Welcome to Scribo developer hub.",
+  "bannerDescription": "Welcome to Omnilogic developer hub.",
   "theme": {
-    "primaryColor": "#6190EA",
+    "primaryColor": "#243891",
     "headerFontColor": "#fff"
   },
   "menus": [
     {
       "label": "About",
-      "href": "https://scribo.dev"
+      "href": "https://omnilogic.ai"
     },
     {
       "label": "Carrer",
-      "href": "https://scribo.dev"
+      "href": "https://omnilogic.ai"
     }
   ],
   "docs": [
     {
-      "name": "Scribo API",
-      "description": "Scribo REST API",
-      "href": "scribo-api"
+      "name": "Sales Pipeline API",
+      "description": "Sales Pipeline API for personal assistant",
+      "href": "sales-pipeline-api"
     }
   ]
 }
