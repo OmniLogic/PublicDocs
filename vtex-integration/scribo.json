@@ -1,0 +1,12 @@
+{
+  "sidebar": [
+    {
+      "label": "Intelligent Store",
+      "href": "intelligent-store"
+    },
+    {
+      "label": "Product Cloud",
+      "href": "product-cloud"
+    }
+  ]
+}

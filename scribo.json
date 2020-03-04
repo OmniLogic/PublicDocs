@@ -21,8 +21,13 @@
   "docs": [
     {
       "name": "Tracker",
-      "description": "Manual de instegração para trackeamento do usuário",
+      "description": "Manual de integração para trackeamento do usuário",
       "href": "tracker"
+    },
+    {
+      "name": "Integração VTEX",
+      "description": "Manual de integração VTEX",
+      "href": "vtex-integration"
     },
     {
       "name": "Sales Pipeline API",
