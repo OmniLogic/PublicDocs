@@ -20,6 +20,11 @@
   ],
   "docs": [
     {
+      "name": "Tracker",
+      "description": "Manual de instegração para trackeamento do usuário",
+      "href": "tracker"
+    },
+    {
       "name": "Sales Pipeline API",
       "description": "Sales Pipeline API for personal assistant",
       "href": "sales-pipeline-api"
