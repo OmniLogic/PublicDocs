@@ -84,6 +84,41 @@ Segue um exemplo de payload de retorno:
       "Material",
       "Tipo"
     ]
+  },
+  {
+    "name": "Relogio Condor CO2035KRJ/4C",
+    "description": "Informações :\r\n- Marca: Condor\r\n- Referência: CO2035KRJ/4C\r\n- Genêro: Feminino\r\n- Garantia: 1 Ano em Toda Rede de Assistência Técnica no Brasil\r\n\r\nCaracterísticas\r\n\r\n- Composição do Vidro: Cristal Mineral\r\n- Material da Caixa: Metal\r\n- Cor da Caixa: Dourado\r\n- Material da Pulseira: Aço \r\n- Cor da Pulseira: Dourado\r\n\r\nMedidas\r\n\r\n- Diâmetro da Caixa: 4,0 cm\r\n\r\nResistência a Água\r\n\r\n- WR: 5 ATM\r\n- Pode Lavar as Mãos: SIM\r\n- Pode Usar em Água Corrente: SIM\r\n- Pode Usar na Piscina: NÃO\r\n- Pode Usar em Mergulho Profundo: NÃO",
+    "ean": "7891530431142",
+    "images": [
+      "https://olist-v2-dev.s3.amazonaws.com/products-images/e5700df6-115e-46b2-9c6b-44931d0f3c7d.jpg"
+    ],
+    "metadata": {
+      "Modelo": "CO2035KRJ",
+      "Marca": "Condor",
+      "Cor": "Dourado",
+      "Material": "Aço",
+      "Gênero": "Feminino",
+      "Entidade": "Relógio",
+      "Características": "Resistente à água"
+    },
+    "technical_specification": [
+      "Entidade",
+      "Marca",
+      "Linha de Produto",
+      "Modelo",
+      "Cor",
+      "Gênero",
+      "Mecanismo",
+      "Características",
+      "Estilo",
+      "Classificação",
+      "Material",
+      "Tipo"
+    ]
   }
 ]
 ```
+
+## Exemplos
+
+Acesse a página de [especificações]("/api-doc/seller-api") para mais exemplos e um detalhamento melhor com relação à URL de acesso, autenticação e retornos.
