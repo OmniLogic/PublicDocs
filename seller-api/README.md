@@ -39,6 +39,8 @@ ou uma busca direto pelo EAN
 
 ## Retorno
 
+O retorno da API apresenta uma lista das ofertas mais similares à busca realizada. Cada oferta apresenta as seguintes propriedades:
+
 | propriedade             | tipo     | descrição                                         |
 | ----------------------- | -------- | ------------------------------------------------- |
 | name                    | string   | nome da oferta                                    |
@@ -47,6 +49,8 @@ ou uma busca direto pelo EAN
 | images                  | string[] | lista de imagens da oferta                        |
 | metadata                | object   | atributos extraídos da oferta                     |
 | technical_specification | string[] | atributos que serão utilizados como ficha técnica |
+
+Segue um exemplo de payload de retorno:
 
 ```json
 [
