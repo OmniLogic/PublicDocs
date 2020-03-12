@@ -45,34 +45,32 @@ O retorno da API apresenta todos os atributos extraídos do texto de entrada do 
 Segue um exemplo de payload de retorno:
 
 ```json
-[
-  {
-    "niche": "vestuario",
-    "metadata": {
-      "Modelo": "CO2035KYH",
-      "Marca": "Condor",
-      "Cor": "Prata",
-      "Material": "Aço",
-      "Gênero": "Feminino",
-      "Entidade": "Relógio",
-      "Características": "Resistente à água"
-    },
-    "technical_specification": [
-      "Entidade",
-      "Marca",
-      "Linha de Produto",
-      "Modelo",
-      "Cor",
-      "Gênero",
-      "Mecanismo",
-      "Características",
-      "Estilo",
-      "Classificação",
-      "Material",
-      "Tipo"
-    ]
-  }
-]
+{
+  "niche": "vestuario",
+  "metadata": {
+    "Modelo": "CO2035KYH",
+    "Marca": "Condor",
+    "Cor": "Prata",
+    "Material": "Aço",
+    "Gênero": "Feminino",
+    "Entidade": "Relógio",
+    "Características": "Resistente à água"
+  },
+  "technical_specification": [
+    "Entidade",
+    "Marca",
+    "Linha de Produto",
+    "Modelo",
+    "Cor",
+    "Gênero",
+    "Mecanismo",
+    "Características",
+    "Estilo",
+    "Classificação",
+    "Material",
+    "Tipo"
+  ]
+}
 ```
 
 ## Exemplos
