@@ -1,6 +1,6 @@
 # Seller API
 
-Esta API tem como objetivo facilitar o cadastro/atualização de produtos feita pelo seller nos sistemas de integração dos Marketplaces.
+API tem como objetivo facilitar o cadastro/atualização de produtos feita pelo seller nos sistemas de integração dos Marketplaces.
 
 Através de buscas textuais, o seller obterá, de forma estruturada, os atributos/características do produto que ele deseja cadastrar. Desta forma, os produtos já serão cadastrados com os atributos normalizados/enriquecidos.
 
