@@ -6,9 +6,13 @@
       "href": "authentication"
     },
     {
+      "type": "category",
       "label": "Começando",
-      "href": "search-results",
-      "children": [
+      "items": [
+        {
+          "label": "Requisições à API",
+          "href": "search-results"
+        },
         {
           "label": "Busca Textual",
           "href": "term-result"
