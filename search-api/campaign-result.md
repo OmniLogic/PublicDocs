@@ -1,6 +1,6 @@
 # Busca por Campanha
 
-![Resultado Campanha](/assets/search-api/campaign.png)
+![Resultado Campanha](search-api/campaign.png)
 
 Esse tipo de busca é muito utilizado para a criação de campanhas customizadas. Estas são URLs especiais que são atreladas à uma busca previamente configurada através do Dashboard da Omnilogic.
 

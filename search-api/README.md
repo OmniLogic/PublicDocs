@@ -10,7 +10,7 @@ As seguintes funcionalidades estão disponíveis neste serviço:
 - Busca por Campanha: combinação de atributos;
 - Busca por Coleções: conjunto de skus previamente agrupados.
 
-Os detalhes de cada funcionalidade pode ser encontrado na seção ["Começando"](/search-api/search-results)
+Os detalhes de cada funcionalidade pode ser encontrado na seção ["Começando"](search-api/search-results)
 
 ## Motivação
 
@@ -22,7 +22,7 @@ A Busca Semântica aumenta a efetividade de apresentação de ofertas a partir d
 
 API sendo utilizada para exibir resultados de produtos e os filtros laterais, que possuem todas as característica do tipo de produto pesquisado
 
-![Resultado Busca](/search-api/results.png)
+![Resultado Busca](search-api/results.png)
 
 ### Input de busca
 
