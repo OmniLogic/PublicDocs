@@ -7,19 +7,25 @@
     },
     {
       "label": "Começando",
-      "href": "search-results"
-    },
-    {
-      "label": "Busca Textual",
-      "href": "term-result"
-    },
-    {
-      "label": "Busca por Categoria",
-      "href": "category-result"
-    },
-    {
-      "label": "Busca por Campanha",
-      "href": "campaign-result"
+      "href": "search-results",
+      "children": [
+        {
+          "label": "Busca Textual",
+          "href": "term-result"
+        },
+        {
+          "label": "Busca por Categoria",
+          "href": "category-result"
+        },
+        {
+          "label": "Busca por Campanha",
+          "href": "campaign-result"
+        },
+        {
+          "label": "Busca por Seller",
+          "href": "seller-result"
+        }
+      ]
     }
   ]
 }

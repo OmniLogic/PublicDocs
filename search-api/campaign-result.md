@@ -1,6 +1,6 @@
-# Busca Textual
+# Busca por Seller
 
-Esse tipo de busca é muito utilizado em caixas de busca localizadas no topo das páginas do e-commerce. Para utilizar a pesquisa que o usuário está realizando, basta chamar o `SearchAPI` com o seguinte input
+Esse tipo de busca é muito utilizado em páginas customizadas por seller. Para realizar esse tipo de busca, basta chamar o `SearchAPI` com o seguinte input
 
 ## Input
 
@@ -8,6 +8,6 @@ Esse tipo de busca é muito utilizado em caixas de busca localizadas no topo das
 {
   "token": "{{TOKEN_LOJA}}",
   "sort": "price.desc",
-  "query": [{ "name": "other_details", "values": ["{{BUSCA_DO_USUÁIO}}"] }]
+  "sellers": ["{{SELLER}}"]
 }
 ```
