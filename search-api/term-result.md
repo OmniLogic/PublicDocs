@@ -2,6 +2,8 @@
 
 Esse tipo de busca é muito utilizado em caixas de busca localizadas no topo das páginas do e-commerce. Para utilizar a pesquisa que o usuário está realizando, basta chamar o `SearchAPI` com o seguinte input
 
+## Input
+
 ```json
 {
   "token": "{{TOKEN_LOJA}}",
@@ -11,6 +13,8 @@ Esse tipo de busca é muito utilizado em caixas de busca localizadas no topo das
 ```
 
 Esta tipo de busca irá retornar um payload no seguinte formato:
+
+## Retorno API
 
 ```json
 {

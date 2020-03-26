@@ -7,11 +7,19 @@
     },
     {
       "label": "Começando",
-      "href": "search-resuts.md"
+      "href": "search-results.md"
     },
     {
       "label": "Busca Textual",
       "href": "term-result"
+    },
+    {
+      "label": "Busca por Categoria",
+      "href": "category-result"
+    },
+    {
+      "label": "Busca por Campanha",
+      "href": "campaign-result"
     }
   ]
 }
