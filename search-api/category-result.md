@@ -1,5 +1,7 @@
 # Busca por Categoria
 
+![Resultado Categorias](search-api/categories.png)
+
 Esse tipo de busca é muito utilizado em páginas de departamentos ou categorias. Para realizar esse tipo de busca, basta chamar o `SearchAPI` com o seguinte input
 
 ## Input
@@ -11,3 +13,5 @@ Esse tipo de busca é muito utilizado em páginas de departamentos ou categorias
   "categories": ["{{CATEGORIA_LOJA}}"]
 }
 ```
+
+Sendo a variável `CATEGORIA_LOJA` um nome de departamento/categoria do e-commerce.

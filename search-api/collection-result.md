@@ -1,8 +1,8 @@
 # Busca por Coleção
 
-Esse tipo de busca é muito utilizado em páginas de coleções. Estes são agrupamentos por SKUs, previamente configurados através do Dashboard da Omnilogic.
+![Result Coleção](search-api/collection.png)
 
-IMAGEM DASHBOARD
+Esse tipo de busca é muito utilizado em páginas de coleções. Estes são agrupamentos por SKUs, previamente configurados através do Dashboard da Omnilogic.
 
 Para realizar esse tipo de busca, basta chamar o `SearchAPI` com o seguinte input
 
