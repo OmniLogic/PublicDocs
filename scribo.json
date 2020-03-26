@@ -20,6 +20,11 @@
   ],
   "docs": [
     {
+      "name": "Search API",
+      "description": "Semantic Search for e-commerces",
+      "href": "search-api"
+    },
+    {
       "name": "Sales Pipeline API",
       "description": "Sales Pipeline API for personal assistant",
       "href": "sales-pipeline-api"

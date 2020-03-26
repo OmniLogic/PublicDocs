@@ -1,0 +1,17 @@
+{
+  "specificationUrl": "https://search.oppuz.com/api-v3/openapi.json",
+  "sidebar": [
+    {
+      "label": "Autenticação",
+      "href": "authentication"
+    },
+    {
+      "label": "Começando",
+      "href": "search-resuts.md"
+    },
+    {
+      "label": "Busca Textual",
+      "href": "term-result"
+    }
+  ]
+}
