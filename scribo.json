@@ -33,6 +33,11 @@
       "name": "TTS API",
       "description": "TTS API for personal assistant",
       "href": "tts-api"
+    },
+    {
+      "name": "Git Workflow",
+      "description": "Version control best practices",
+      "href": "git-workflow"
     }
   ]
 }
