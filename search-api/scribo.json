@@ -22,16 +22,16 @@
           "href": "category-result"
         },
         {
-          "label": "Busca por Campanha",
-          "href": "campaign-result"
+          "label": "Busca por Coleção",
+          "href": "collection-result"
         },
         {
           "label": "Busca por Seller",
           "href": "seller-result"
         },
         {
-          "label": "Busca por Landing Page",
-          "href": "landing-page-result"
+          "label": "Busca por Campanha",
+          "href": "campaign-result"
         }
       ]
     }
