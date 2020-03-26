@@ -12,10 +12,14 @@ Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os 
 | ---------------------- | ----------------------------------------- | ------------------------------------------------------------------------------------- |
 | token                  | string                                    | Fornecido pela Omnilogic                                                              |
 | query                  | object[{ name: string, values: [string]}] | Metadados selecionados pelo usuário durante a busca                                   |
-| Page (default: 1)      | int                                       | Número da página                                                                      |
+| page (default: 1)      | int                                       | Número da página                                                                      |
 | pageSize (default: 10) | int                                       | Número de itens por página sort String Valores definidos para ordenação de resultados |
 | selectedSubstantive    | string                                    | Valores definidos para seleção dos metadados a serem retornados                       |
 | source                 | string                                    | Valores definidos para decidir buscar ou não por uma sugestão                         |
+| searchPath             | string                                    | URL da campanha                                                                       |
+| clusters               | string[]                                  | Valores de coleções à serem buscadas                                                  |
+| categories             | string[]                                  | Valores de departamentos/categorias à serem buscadas                                  |
+| sellers                | string[]                                  | Valores de sellers à serem buscados                                                   |
 
 ## Valores possíveis para sort
 
