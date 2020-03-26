@@ -28,6 +28,10 @@
         {
           "label": "Busca por Seller",
           "href": "seller-result"
+        },
+        {
+          "label": "Busca por Landing Page",
+          "href": "landing-page-result"
         }
       ]
     }

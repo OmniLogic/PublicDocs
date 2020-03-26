@@ -6,7 +6,7 @@ A principal rota do SearchAPI é a `/search`, que é responsável por retornar a
 - Por categorias
 - Por campanhas/coleções
 
-Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os métodos os parâmetro de entrada segue o mesmo modelo:
+Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os métodos os parâmetros de entrada seguem o mesmo modelo:
 
 | Campo                  | Tipo                                      | Observação                                                                              |
 | ---------------------- | ----------------------------------------- | --------------------------------------------------------------------------------------- |

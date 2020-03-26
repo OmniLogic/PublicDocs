@@ -1,4 +1,4 @@
-# Autorização
+# Autenticação
 
 A API possui dois tipos de autenticação, um para acessar os resultados de busca e outro para administrar as configurações específicas de cada loja, como sinônimos, redirecionamento e campanhas.
 
