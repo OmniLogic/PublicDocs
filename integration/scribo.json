@@ -1,6 +1,10 @@
 {
   "sidebar": [
     {
+      "label": "Conceitos",
+      "href": "concepts"
+    },
+    {
       "label": "Webhook",
       "href": "webhook"
     },
