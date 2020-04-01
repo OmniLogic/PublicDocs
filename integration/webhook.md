@@ -31,6 +31,8 @@ Contendo no body um JSON com as seguintes propriedades:
 | store       | string | Nome da loja |
 | id          | string | ID da oferta |
 
+\*A chave de acesso deve ser solicitada
+
 ### Exemplo de payload
 
 ```json
@@ -44,40 +46,23 @@ Contendo no body um JSON com as seguintes propriedades:
 
 Possuindo o ID, a Omnilogic utilizará uma API pública do cliente para obter todas as informações da oferta. Alguns dados que são esperados/desejados dessa API:
 
-| Propriedade       | Tipo     | Descrição                               |
-| ----------------- | -------- | --------------------------------------- |
-| sku               | string   | ID do SKU                               |
-| seller_id\*       | string   | ID do seller                            |
-| seller_offer_id\* | string   | ID da oferta no seller                  |
-| title             | string   | nome da oferta                          |
-| description       | string   | descrição da oferta                     |
-| url               | string   | url da oferta                           |
-| images            | string[] | lista de imagens da oferta              |
-| price             | float    | preço da oferta                         |
-| list_price        | float    | preço, sem desconto, da oferta          |
-| attributes        | any      | atributos informados pelo seller        |
-| ean               | string   | código de barras                        |
-| active            | boolean  | indicador se a oferta está ativa ou não |
-
-### Exemplo de payload
-
-```json
-{
-  "sku": "{{SKU_ID}}",
-  "seller_id": "seller",
-  "seller_offer_id": "218008100",
-  "title": "iPhone 7 Apple 32GB Ouro Rosa 4G Tela 4.7",
-  "price": 2999,
-  "list_price": 3499.9,
-  "description": "...",
-  "categories": [{ "id": "TE", "subcategories": [{ "id": "TEIP" }] }],
-  "attributes": [],
-  "reference": "Câm. 12MP + Selfie 7MP iOS 11 Proc. Chip A10",
-  "ean": "0190198067876",
-  "images": ["..."],
-  "active": true
-}
-```
+| Propriedade        | Tipo     | Descrição                               |
+| ------------------ | -------- | --------------------------------------- |
+| product            | string   | ID do Produto                           |
+| sku                | string   | ID do SKU                               |
+| seller_id\*        | string   | ID do seller                            |
+| seller_offer_id\*  | string   | ID da oferta no seller                  |
+| sku_title          | string   | nome do SKU                             |
+| product_title      | string   | nome do Produto                         |
+| description        | string   | descrição da oferta                     |
+| url                | string   | url da oferta                           |
+| images             | string[] | lista de imagens da oferta              |
+| price              | float    | preço da oferta                         |
+| list_price         | float    | preço, sem desconto, da oferta          |
+| sku_attributes     | any      | atributos informados do Produto         |
+| product_attributes | any      | atributos informados do SKU             |
+| ean                | string   | código de barras                        |
+| active             | boolean  | indicador se a oferta está ativa ou não |
 
 ## Payload de Retorno
 

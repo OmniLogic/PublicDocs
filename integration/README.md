@@ -19,7 +19,7 @@ Entretanto não se recomenda nenhum dos métodos acima, e devem ser utilizados e
 
 ## Dados de usuários
 
-Para alimentar o motor de inteligência da Omnilogic, também é necessária a coleta do comportamento dos usuários nas lojas. Isso envolve na obtenção dos seguintes dados:
+Para alimentar o motor de inteligência da Omnilogic, também é necessária a coleta do comportamento dos usuários nas lojas. Isso envolve a obtenção dos seguintes dados:
 
 - Produtos visitados;
 - Produtos clicados;
@@ -29,6 +29,6 @@ Para alimentar o motor de inteligência da Omnilogic, também é necessária a c
 
 Entre outros, dependendo do tipo de integração contratado.
 
-Esses dados são de extrema importancia para o correto funcionamento das ferramentas presentes no Intelligent Store.
+Esses dados são de extrema importância para o correto funcionamento das ferramentas presentes no Intelligent Store.
 
 Para a captura desses dados, recomendamos a instalação de um JavaScript da Omnilogic nas lojas, que chamamos de [Tracker](integration/tracker)
