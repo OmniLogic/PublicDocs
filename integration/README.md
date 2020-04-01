@@ -13,7 +13,7 @@ Caso esse tipo de integração não atenda o seu caso de uso, disponibilizamos o
 
 - XML;
 - Tracker capturando produtos visitados;
-- Planilhas;
+- Planilhas.
 
 Entretanto não se recomenda nenhum dos métodos acima, e devem ser utilizados em último caso.
 
