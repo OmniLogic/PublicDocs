@@ -1,6 +1,6 @@
 # Conceitos Omnilogic
 
-![](integration/concept)
+![](integration/concept.png)
 
 ## Produto
 
