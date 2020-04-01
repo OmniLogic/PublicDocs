@@ -2,9 +2,9 @@
 
 A integração via Webhooks é a mais indicada, por ser a mais confiável com relação ao sincronismos em "tempo real" entre os produtos da loja com a Omnilogic. Ela basicamente consiste em três componentes
 
-- Webhook Omnilogic: para receber notificações de criação/atualização de produtos;
-- API de detalhamento do produto/sku: para pesquisar todos os dados do produto previamente notificado;
-- Webhook de retorno: para o recebimento dos produtos enriquecidos pelo Product Cloud\*.
+- Webhook Omnilogic: para receber notificações de criação/atualização de ofertas;
+- API de detalhamento do produto/sku: para pesquisar todos os dados da oferta previamente notificado;
+- Webhook de retorno: para o recebimento das ofertas enriquecidas pelo Product Cloud\*.
 
 \*Este ultimo componente só é necessário para os clientes que contrataram os serviços do Product Cloud.
 
@@ -12,7 +12,7 @@ O seguinte diagrama resume os sistemas envolvidos nesta integração:
 
 ![Integração Webhook](integration/integration-webhook.png)
 
-Um detalhe importante é que o Webhook da Omnilogic, preferencialmente, recebe apenas o ID do produto/sku que sofreu alguma modificação, para logo após buscar as suas informações em uma API da loja. Esse fluxo foi arquitetado recebendo um ID e não os dados inteiros para possibilitar possíveis ressincronizações sem a necessidade de solicitar um reenvio por conta do cliente.
+Um detalhe importante é que o Webhook da Omnilogic, preferencialmente, recebe apenas o ID do oferta que sofreu alguma modificação, para logo após buscar as suas informações em uma API da loja. Esse fluxo foi arquitetado recebendo um ID e não os dados inteiros para possibilitar possíveis ressincronizações sem a necessidade de solicitar um reenvio por conta do cliente.
 
 Entretanto, mudanças nessa estrutura **são possíveis**, caso essa arquitetura não atenda ao caso de uso da loja.
 
