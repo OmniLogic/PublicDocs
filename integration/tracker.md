@@ -1,10 +1,11 @@
 # Tracker
 
-O script abaixo deve ser incluído dentro do `<head></head>` de todas as páginas navegadas pelos usuários, inclusive checkout e finalização de pedido, trocando a variável `{{LOJA}}` peelo código da sua loja gerado pela Omnilogic. Quando o usuário estiver logado, devem ser informados também nome e e-mail através da variável oppuzUser:
+![Diagrama Fluxo Tracker](integration/integration-tracker.png)
+
+O script abaixo deve ser incluído dentro do `<head></head>` de todas as páginas navegadas pelos usuários, inclusive checkout e finalização de pedido, trocando a variável `{{LOJA}}` peelo código da sua loja gerado pela Omnilogic.
 
 ```html
 <script type="text/javascript">
-  var oppuzUser = { name: 'nome_do_usuario', email: 'email_do_usuario' };
   try {
     var oppuzJSProtocol =
       'https:' == document.location.protocol ? 'https://' : 'http://';
