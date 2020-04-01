@@ -2,7 +2,7 @@
 
 A API possui dois tipos de autenticação, um para acessar os resultados de busca e outro para administrar as configurações específicas de cada loja, como sinônimos, redirecionamento e campanhas.
 
-Ambos devem ser solicitados através do nosso e-mail comercial sales@omnilogic.ai. Eles te ajudaram a configurar a [integração](integration) e liberar todos os acessos necessários
+Ambos devem ser solicitados através do nosso e-mail comercial sales@omnilogic.ai. Eles te ajudaram a configurar a [integração](/integration) e liberar todos os acessos necessários
 
 ## Token Resultado de Busca
 
