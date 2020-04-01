@@ -31,6 +31,8 @@ Contendo no body um JSON com as seguintes propriedades:
 | store       | string | Nome da loja |
 | id          | string | ID da oferta |
 
+### Exemplo de payload
+
 ```json
 {
   "store": "{{STORE}}",
@@ -57,7 +59,7 @@ Possuindo o ID, a Omnilogic utilizará uma API pública do cliente para obter to
 | ean               | string   | código de barras                        |
 | active            | boolean  | indicador se a oferta está ativa ou não |
 
-Exemplo de retorno da API
+### Exemplo de payload
 
 ```json
 {
@@ -101,7 +103,9 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
 | sku_name_metadata         | string[] | atributos que são utilizados para a formação do nome do sku     |
 | filters_metadata          | string[] | atributos que estão configurados como filtros                   |
 
-### Exemplo de payload:
+### Exemplo de payload
+
+**Lembrando que o payload de retorno pode ser adaptado de acordo com as necessidades do cliente**
 
 ```json
 {
@@ -149,5 +153,3 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
   ]
 }
 ```
-
-**Lembrando que o payload de retorno pode ser adaptado de acordo com as necessidades do cliente**
