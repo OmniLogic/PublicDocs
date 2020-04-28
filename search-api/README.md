@@ -29,3 +29,5 @@ API sendo utilizada para exibir resultados de produtos e os filtros laterais, qu
 API sendo utilizada para sugerir produtos e facilitar a busca do usuário no campo de busca do e-commerce
 
 ![Input Busca](/search-api/input.jpg)
+
+
