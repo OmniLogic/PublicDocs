@@ -1,6 +1,6 @@
 # Busca por Coleção
 
-![Result Coleção](search-api/collection.jpg)
+![Result Coleção](/search-api/collection.jpg)
 
 Esse tipo de busca é muito utilizado em páginas de coleções. Estes são agrupamentos por SKUs, previamente configurados através do Dashboard da Omnilogic.
 

@@ -1,6 +1,6 @@
 # Busca por Categoria
 
-![Resultado Categorias](search-api/categories.jpg)
+![Resultado Categorias](/search-api/categories.jpg)
 
 Esse tipo de busca é muito utilizado em páginas de departamentos ou categorias. Para realizar esse tipo de busca, basta chamar o `SearchAPI` com o seguinte input
 
