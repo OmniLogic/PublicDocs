@@ -1,6 +1,6 @@
 # Tracker
 
-![Diagrama Fluxo Tracker](integration/integration-tracker.png)
+![Diagrama Fluxo Tracker](/integration/integration-tracker.png)
 
 O script abaixo deve ser incluído dentro do `<head></head>` de todas as páginas navegadas pelos usuários, inclusive checkout e finalização de pedido, trocando a variável `{{LOJA}}` peelo código da sua loja gerado pela Omnilogic.
 

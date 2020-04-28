@@ -1,6 +1,6 @@
 # Conceitos Omnilogic
 
-![](integration/concept.png)
+![](/integration/concept.png)
 
 ## Produto
 
@@ -16,4 +16,4 @@
 
 ## Exemplo
 
-![](integration/concept-example.png)
+![](/integration/concept-example.png)
