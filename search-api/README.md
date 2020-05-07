@@ -22,10 +22,10 @@ A Busca Semântica aumenta a efetividade de apresentação de ofertas a partir d
 
 API sendo utilizada para exibir resultados de produtos e os filtros laterais, que possuem todas as característica do tipo de produto pesquisado
 
-![Resultado Busca](/search-api/results.jpg)
+![Resultado Busca](/assets/search-api/results.jpg)
 
 ### Input de busca
 
 API sendo utilizada para sugerir produtos e facilitar a busca do usuário no campo de busca do e-commerce
 
-![Input Busca](/search-api/input.jpg)
+![Input Busca](/assets/search-api/input.jpg)
