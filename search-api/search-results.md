@@ -2,9 +2,9 @@
 
 A principal rota do SearchAPI é a `/search`, que é responsável por retornar as ofertas + filtros dado uma busca:
 
-- Textual
-- Por categorias
-- Por campanhas/coleções
+-   Textual
+-   Por categorias
+-   Por campanhas/coleções
 
 Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os métodos os parâmetros de entrada seguem o mesmo modelo:
 
@@ -23,22 +23,26 @@ Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os 
 
 ## Valores possíveis para sort
 
-- `score.desc` (default)- ordena por relevância / ”mais populares”
-- `ord.desc` - ordena por mais vendidos
-- `name.desc` - ordena por nome decrescente
-- `name.asc` - ordena por nome crescente
-- `price.desc` - ordena por preço decrescente
-- `price.asc` - ordena por preço crescente
+-   `score.desc` (default)- ordena por relevância / ”mais populares”
+-   `ord.desc` - ordena por mais vendidos
+-   `name.desc` - ordena por nome decrescente
+-   `name.asc` - ordena por nome crescente
+-   `price.desc` - ordena por preço decrescente
+-   `price.asc` - ordena por preço crescente
+-   `release_date.asc` - ordena por data de criação (mais antigo primeiro)
+-   `release_date.desc` - ordena por data de criação (mais recente primeiro))
+-   `price_discount.asc` - ordena por desconto crescente
+-   `price_discount.desc` - ordena por desvonto decrescente
 
 ## Valores possíveis para selectedSubstantive
 
-- `none` - (default) retorna os resultados e metadados de todos os substantivos encontrados pela busca
-- `first` - retorna apenas os resultados e metadados do primeiro substantivo encontrado pela busca
+-   `none` - (default) retorna os resultados e metadados de todos os substantivos encontrados pela busca
+-   `first` - retorna apenas os resultados e metadados do primeiro substantivo encontrado pela busca
 
 ## Valores possíveis para source
 
-- `page` - (default) realiza a busca utilizando a primeira sugestão
-- `input` - exibe as sugestões sem realizar a busca automática
+-   `page` - (default) realiza a busca utilizando a primeira sugestão
+-   `input` - exibe as sugestões sem realizar a busca automática
 
 ## Resultado
 
