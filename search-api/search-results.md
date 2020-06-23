@@ -32,7 +32,7 @@ Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os 
 -   `release_date.asc` - ordena por data de criação (mais antigo primeiro)
 -   `release_date.desc` - ordena por data de criação (mais recente primeiro))
 -   `price_discount.asc` - ordena por desconto crescente
--   `price_discount.desc` - ordena por desvonto decrescente
+-   `price_discount.desc` - ordena por desconto decrescente
 
 ## Valores possíveis para selectedSubstantive
 
