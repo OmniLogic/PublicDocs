@@ -30,7 +30,7 @@ Ela é acessível tanto utilizando o método `POST` quanto `GET`, e em ambos os 
 -   `price.desc` - ordena por preço decrescente
 -   `price.asc` - ordena por preço crescente
 -   `release_date.asc` - ordena por data de criação (mais antigo primeiro)
--   `release_date.desc` - ordena por data de criação (mais recente primeiro))
+-   `release_date.desc` - ordena por data de criação (mais recente primeiro)
 -   `price_discount.asc` - ordena por desconto crescente
 -   `price_discount.desc` - ordena por desconto decrescente
 
