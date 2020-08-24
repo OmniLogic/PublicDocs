@@ -11,3 +11,6 @@ Here you can find information about each available endpoint:
 ### /process-user-input
 Natural language understanding (NLU) for digital sales intents and entities with semantic offer search.
 
+# Changelog
+
+All notable changes to this project will be documented in this session.
