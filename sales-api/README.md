@@ -17,13 +17,13 @@ Here you can find information about each available endpoint:
 ### /process-user-input
 Natural language understanding (NLU) for digital sales intents and entities with semantic offer search.
 
-# Changelog
+## Changelog
 
 All notable changes to this project will be documented in this session.
 
-## [1.1.0] - Unreleased
+### [1.1.0] - Unreleased
 
-### Work in progress
+#### Work in progress
 - process-user-input service:
    - price selection entity recognition and search filtered
    - most viewed entity recognition and search filtered
@@ -31,21 +31,21 @@ All notable changes to this project will be documented in this session.
    - lower price entity recognition and search filtered
    - best promotions entity recognition and search filtered
 
-## [1.1.0beta] - Released - 2020-08-19
+### [1.1.0beta] - Released - 2020-08-19
 
-### Added
+#### Added
 - process-user-input service:
    - spell checking
    - available sku count
    - metadata filters with sku counts
 
-### Changed
+#### Changed
 - process-user-input service:
    - page_size field request to search_size fied name
 
-## [1.0.0] - Released - 2020-08-14
+### [1.0.0] - Released - 2020-08-14
 
-### Added
+#### Added
 
 - process-user-input service:
    - entity recoginition for product request by user
