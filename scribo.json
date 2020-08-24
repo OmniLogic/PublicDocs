@@ -30,7 +30,7 @@
       "href": "search-api"
     },
     {
-      "name": "Sales API Test 2",
+      "name": "Sales API",
       "description": "Sales services for personal assistants",
       "href": "sales-api"
     }
