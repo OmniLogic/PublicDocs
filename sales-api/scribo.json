@@ -1,15 +1,15 @@
 {
   "sidebar": [
     {
-      "label": "Autenticação",
+      "label": "Credentials",
       "href": "authentication"
     },
     {
       "type": "category",
-      "label": "Manual",
+      "label": "Services",
       "items": [
         {
-          "label": "Requisições à API",
+          "label": "User requests",
           "href": "search-results"
         }
       ]
