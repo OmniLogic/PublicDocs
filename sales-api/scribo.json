@@ -1,7 +1,7 @@
 {
   "sidebar": [
     {
-      "label": "Autentication",
+      "label": "Setup",
       "href": "authentication"
     },
     {
