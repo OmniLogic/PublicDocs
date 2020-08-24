@@ -1,0 +1,15 @@
+{
+  "specificationUrl": "https://sales-pipeline.omnilogic.ai/openapi.json",
+  "sidebar": [
+    {
+      "type": "category",
+      "label": "Documentation",
+      "items": [
+        {
+          "label": "Commands",
+          "href": "api-commands"
+        }
+      ]
+    }
+  ]
+}
