@@ -35,12 +35,6 @@
       "href": "sales-api"
     },
     {
-      "name": "Sales API - Internal Use",
-      "description": "Sales Pipeline API for personal assistant",
-      "href": "sales-api-internal",
-      "private": true
-    },
-    {
       "name": "TTS API",
       "description": "TTS API for personal assistant",
       "href": "tts-api"
