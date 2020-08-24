@@ -1,15 +1,15 @@
 {
   "sidebar": [
     {
-      "label": "Authentication",
-      "href": "authentication"
-    },
-    {
       "type": "category",
       "label": "User Manual",
       "items": [
         {
-          "label": "Users requests",
+          "label": "Authentication",
+          "href": "authentication"
+        },
+        {
+          "label": "User requests",
           "href": "process-user-input"
         }
       ]
