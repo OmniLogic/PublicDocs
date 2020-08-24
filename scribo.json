@@ -31,7 +31,7 @@
     },
     {
       "name": "Sales API",
-      "description": "Sales API for personal assistant",
+      "description": "Sales API for sales assistants",
       "href": "sales-api"
     }
   ]

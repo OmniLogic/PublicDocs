@@ -1,36 +1,16 @@
 {
   "sidebar": [
     {
-      "label": "Setup",
+      "label": "Autenticação",
       "href": "authentication"
     },
     {
       "type": "category",
-      "label": "Começando",
+      "label": "Manual",
       "items": [
         {
           "label": "Requisições à API",
           "href": "search-results"
-        },
-        {
-          "label": "Busca Textual",
-          "href": "term-result"
-        },
-        {
-          "label": "Busca por Categoria",
-          "href": "category-result"
-        },
-        {
-          "label": "Busca por Coleção",
-          "href": "collection-result"
-        },
-        {
-          "label": "Busca por Seller",
-          "href": "seller-result"
-        },
-        {
-          "label": "Busca por Campanha",
-          "href": "campaign-result"
         }
       ]
     }
