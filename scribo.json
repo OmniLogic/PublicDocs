@@ -31,9 +31,8 @@
     },
     {
       "name": "Sales API",
-      "description": "Sales Pipeline API for personal assistant",
-      "href": "sales-api",
-      "private": false
+      "description": "Sales API for personal assistant",
+      "href": "sales-api"
     },
     {
       "name": "Sales API - Internal Use",
