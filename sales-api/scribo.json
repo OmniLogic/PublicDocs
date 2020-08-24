@@ -1,14 +1,20 @@
 {
+  "specificationUrl": "https://search.oppuz.com/api-v3/openapi.json",
   "sidebar": [
     {
+      "label": "Autenticação",
+      "href": "authentication"
+    },
+    {
       "type": "category",
-      "label": "Documentation",
+      "label": "Começando",
       "items": [
         {
-          "label": "Commands",
-          "href": "process_user_input"
+          "label": "Solicitações de usuários",
+          "href": "process-user-input"
         }
       ]
     }
   ]
 }
+
