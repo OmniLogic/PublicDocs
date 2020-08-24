@@ -8,7 +8,7 @@ We believe that vending should be effortless.
 
 This is public endpoint for Sales API services:
 
-http://assistant.omnilogic.ai/sales/api/
+``` http://assistant.omnilogic.ai/sales/api/ ```
 
 ## API Services
 
