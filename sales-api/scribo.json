@@ -10,6 +10,10 @@
       "items": [
         {
           "label": "User requests",
+          "href": "process_user_input"
+        },
+        {
+          "label": "Search",
           "href": "search-results"
         }
       ]
