@@ -28,6 +28,11 @@
       "name": "Search API",
       "description": "Semantic Search for e-commerces",
       "href": "search-api"
+    },
+    {
+      "name": "Sales API Test",
+      "description": "Semantic Search for e-commerces",
+      "href": "sales-api"
     }
   ]
 }
