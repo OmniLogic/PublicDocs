@@ -16,12 +16,6 @@ http://assistant.omnilogic.ai/sales/api/
 
 Here you can find information about each available endpoint:
 
-* [/process-user-input]
-
-[//]: # (These are reference links used in the body of this file.)
-
-[/process-user-input]: <process_user_input.md>
-
 # Changelog
 
 All notable changes to this project will be documented in this session.
@@ -43,7 +37,6 @@ All notable changes to this project will be documented in this session.
    - spell checking
    - available sku count
    - metadata filters with sku counts
-   - user_email and user_phone register
 
 ### Changed
 - process-user-input service:
