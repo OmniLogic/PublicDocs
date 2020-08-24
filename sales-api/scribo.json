@@ -1,12 +1,14 @@
 {
   "sidebar": [
     {
-      "label": "Authentication",
-      "href": "authentication"
-    },
-    {
-      "label": "User requests",
-      "href": "process-user-input"
+      "type": "category",
+      "label": "Documentation",
+      "items": [
+        {
+          "label": "Commands",
+          "href": "process_user_input"
+        }
+      ]
     }
   ]
 }
