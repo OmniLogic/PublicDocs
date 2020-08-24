@@ -1,9 +1,3 @@
-<p align="center">
-    <img src="docs/sales_api_logo_200x200.png" alt="SalesAPI">
-</p>
-
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![buddy branch](https://ci.omnilogic.com.br/omnilogic/assistant-sales-api/repository/branch/master/badge.svg?token=090e6f32aeb3f975dccaffe03abe062324bdb144c30d6b450fb71fad6672145a "buddy branch")](https://ci.omnilogic.com.br/omnilogic/assistant-sales-api/repository/branch/master)
 
 ## Introduction
 
