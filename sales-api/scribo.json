@@ -1,13 +1,17 @@
 {
-  "specificationUrl": "https://sales-pipeline.omnilogic.ai/openapi.json",
+  "specificationUrl": "https://search.oppuz.com/api-v3/openapi.json",
   "sidebar": [
+    {
+      "label": "Autenticação",
+      "href": "authentication"
+    },
     {
       "type": "category",
       "label": "Documentation",
       "items": [
         {
           "label": "Commands",
-          "href": "api-commands"
+          "href": "process_user_input"
         }
       ]
     }
