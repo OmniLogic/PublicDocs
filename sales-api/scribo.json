@@ -9,7 +9,7 @@
       "label": "Services",
       "items": [
         {
-          "label": "User requests",
+          "label": "/process-user-input",
           "href": "process_user_input"
         }
       ]
