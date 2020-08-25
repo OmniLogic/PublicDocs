@@ -15,7 +15,7 @@ Natural language understanding (NLU) for digital sales intents and entities with
 
 All notable changes to this project will be documented in this session.
 
-## [1.1.0] - Unreleased
+## 1.1.0 - Unreleased
 
 ### Work in progress
 - process-user-input service:
@@ -37,7 +37,7 @@ All notable changes to this project will be documented in this session.
 - process-user-input service:
    - page_size field request to search_size fied name
 
-## [1.0.0] - Released - 2020-08-14
+## 1.0.0 - Released - 2020-08-14
 
 ### Added
 

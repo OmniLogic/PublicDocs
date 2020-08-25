@@ -8,6 +8,16 @@ Returns structured data from user shopping intention and optionally searches for
 ```http
 POST /process-user-input
 ```
+## Status Codes
+
+| Status Code | Description |
+| :--- | :--- |
+| 200 - `OK` | Successfully extracted `structured_data` from `relevant_fragment`. |
+| 400 - `BAD_REQUEST` | Can occur if there's a missing required parameter in the Request Body.|
+| 403 - `FORBIDDEN` | There's something wrong with your credentials. |
+| 422 - `UNPROCESSABLE_ENTITY` | Impossible to extract `structured_data` from `relevant_fragment`. |
+| 500 - `INTERNAL SERVER ERROR` | Something went wrong. (This is rare.) |
+| 503 - `SERVICE_UNAVAILABLE` | One or more service is down. (This is a service that relies on several APIs.) |
 
 ## Headers
 
@@ -1222,13 +1232,4 @@ Response Body:
 }
 ```
 
-## Status Codes
 
-| Status Code | Description |
-| :--- | :--- |
-| 200 - `OK` | Successfully extracted `structured_data` from `relevant_fragment`. |
-| 400 - `BAD_REQUEST` | Can occur if there's a missing required parameter in the Request Body.|
-| 403 - `FORBIDDEN` | There's something wrong with your credentials. |
-| 422 - `UNPROCESSABLE_ENTITY` | Impossible to extract `structured_data` from `relevant_fragment`. |
-| 500 - `INTERNAL SERVER ERROR` | Something went wrong. (This is rare.) |
-| 503 - `SERVICE_UNAVAILABLE` | One or more service is down. (This is a service that relies on several APIs.) |
