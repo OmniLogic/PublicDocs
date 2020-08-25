@@ -8,6 +8,7 @@ Returns structured data from user shopping intention and optionally searches for
 ```http
 POST /process-user-input
 ```
+
 ## Status Codes
 
 | Status Code | Description |
@@ -18,6 +19,7 @@ POST /process-user-input
 | 422 - `UNPROCESSABLE_ENTITY` | Impossible to extract `structured_data` from `relevant_fragment`. |
 | 500 - `INTERNAL SERVER ERROR` | Something went wrong. (This is rare.) |
 | 503 - `SERVICE_UNAVAILABLE` | One or more service is down. (This is a service that relies on several APIs.) |
+
 
 ## Headers
 
@@ -45,7 +47,7 @@ Example:
 
 ```json
 {
-    "input_text": "quero uma geladeira brastemp",
+    "input_text": "quero a televisão sony mais vendida da loja",
     "enable_search": true,
     "search_size": 1
 }
@@ -70,6 +72,10 @@ When there aren't any configured metadata for the detected entity, `metadata_sor
 
 When `enable_search` is set to false, `search_result` will be an empty object.
 
+There is a `price_range` field inside `structured_data` that returns an array with the minimum and maximum price defined by the user. It is returned as an empty array when there isn't a defined price.
+
+There is a `sort_behavior` field inside `structured_data` that recognizes how to sort the search according to what the user said. It can have the following values: `"best_selling"`, `"most_relevant"`, `"best_discount"` or `null`. 
+
 It is important to note the `exact_search` field inside `search_result`. It is set to `true` when `structured_data` was used as query in the search. It is set to `false` when it was impossible to find an exact match, but some similar offers were found.
 
 The `metadata_filters` field inside `search_result` contains an array of available filters and its values.
@@ -78,48 +84,122 @@ Example:
 
 ```json
 {
-    "user_input": "quero uma geladeira brastemp",
-    "spellchecked_user_input": "quero uma geladeira brastemp",
+    "user_input": "quero a televisão sony mais vendida da loja",
+    "spellchecked_user_input": "quero a televisão sony mais vendida da loja",
     "previous_context": null,
-    "relevant_fragment": "geladeira brastemp",
+    "relevant_fragment": "televisão sony",
     "structured_data": {
-        "niche": "eletrodomesticos",
-        "entity": "Refrigerador",
-        "probability": "0.99999845",
+        "niche": "eletronicos",
+        "entity": "TV",
+        "probability": "0.9999807",
         "metadata": {
-            "brand": "Brastemp"
-        }
+            "brand": "Sony"
+        },
+        "price_range": [],
+        "sort_behavior": "best_selling"
     },
     "metadata_sorted_by_relevance": [
         "brand",
-        "type-of-defrost",
-        "color",
-        "type-of-refrigerator",
-        "voltage"
+        "screen-size"
     ],
     "metadata_translation": {
         "brand": "marca",
-        "type-of-defrost": "tipo de degelo",
-        "color": "cor",
-        "type-of-refrigerator": "tipo de geladeira",
-        "voltage": "voltagem"
+        "screen-size": "tamanho da tela"
     },
     "search_result": {
-        "total_available": 69,
+        "total_available": 17,
         "search_size": 1,
         "exact_search": true,
         "metadata_filters": [
             {
                 "name": "substantive",
                 "translation": "Produto",
-                "total": 69,
+                "total": 17,
                 "values": [
                     {
-                        "value": "Refrigerador",
-                        "total": 69,
+                        "value": "TV",
+                        "total": 17,
                         "priceRange": {
-                            "min": 0.0,
-                            "max": 10589.0
+                            "min": 1325.75,
+                            "max": 31271.13
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "resources",
+                "translation": "Recursos",
+                "total": 30,
+                "values": [
+                    {
+                        "value": "Smart",
+                        "total": 17,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 31271.13
+                        }
+                    },
+                    {
+                        "value": "X-Reality PRO",
+                        "total": 10,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 31271.13
+                        }
+                    },
+                    {
+                        "value": "Conversor Digital",
+                        "total": 3,
+                        "priceRange": {
+                            "min": 4274.05,
+                            "max": 9214.05
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "conectivity",
+                "translation": "Conectividades",
+                "total": 22,
+                "values": [
+                    {
+                        "value": "HDMI",
+                        "total": 9,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 25499.0
+                        }
+                    },
+                    {
+                        "value": "USB",
+                        "total": 5,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 25499.0
+                        }
+                    },
+                    {
+                        "value": "Fone de Ouvido",
+                        "total": 3,
+                        "priceRange": {
+                            "min": 4690.8,
+                            "max": 25499.0
+                        }
+                    },
+                    {
+                        "value": "WiFi",
+                        "total": 3,
+                        "priceRange": {
+                            "min": 4690.8,
+                            "max": 25499.0
+                        }
+                    },
+                    {
+                        "value": "Wi-Fi",
+                        "total": 2,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 8929.05
                         }
                     }
                 ]
@@ -127,14 +207,131 @@ Example:
             {
                 "name": "brand",
                 "translation": "Marca",
-                "total": 69,
+                "total": 17,
                 "values": [
                     {
-                        "value": "Brastemp",
-                        "total": 69,
+                        "value": "Sony",
+                        "total": 17,
                         "priceRange": {
-                            "min": 0.0,
-                            "max": 10589.0
+                            "min": 1325.75,
+                            "max": 31271.13
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "screen_size",
+                "translation": "Tamanho da Tela",
+                "total": 17,
+                "values": [
+                    {
+                        "value": "32\"",
+                        "total": 1,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 1325.75
+                        }
+                    },
+                    {
+                        "value": "48\"",
+                        "total": 1,
+                        "priceRange": {
+                            "min": 2547.02,
+                            "max": 2547.02
+                        }
+                    },
+                    {
+                        "value": "55\"",
+                        "total": 3,
+                        "priceRange": {
+                            "min": 4299.0,
+                            "max": 6568.67
+                        }
+                    },
+                    {
+                        "value": "65\"",
+                        "total": 7,
+                        "priceRange": {
+                            "min": 4274.05,
+                            "max": 17021.99
+                        }
+                    },
+                    {
+                        "value": "70\"",
+                        "total": 1,
+                        "priceRange": {
+                            "min": 8929.05,
+                            "max": 8929.05
+                        }
+                    },
+                    {
+                        "value": "75\"",
+                        "total": 2,
+                        "priceRange": {
+                            "min": 7399.0,
+                            "max": 12999.0
+                        }
+                    },
+                    {
+                        "value": "85\"",
+                        "total": 2,
+                        "priceRange": {
+                            "min": 25499.0,
+                            "max": 31271.13
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "screen_type",
+                "translation": "Tipo de Tela",
+                "total": 17,
+                "values": [
+                    {
+                        "value": "LED",
+                        "total": 16,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 31271.13
+                        }
+                    },
+                    {
+                        "value": "OLED",
+                        "total": 1,
+                        "priceRange": {
+                            "min": 17021.99,
+                            "max": 17021.99
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "resolution",
+                "translation": "Resolução",
+                "total": 17,
+                "values": [
+                    {
+                        "value": "4K",
+                        "total": 15,
+                        "priceRange": {
+                            "min": 4274.05,
+                            "max": 31271.13
+                        }
+                    },
+                    {
+                        "value": "HD",
+                        "total": 1,
+                        "priceRange": {
+                            "min": 1325.75,
+                            "max": 1325.75
+                        }
+                    },
+                    {
+                        "value": "Full HD",
+                        "total": 1,
+                        "priceRange": {
+                            "min": 2547.02,
+                            "max": 2547.02
                         }
                     }
                 ]
@@ -142,211 +339,14 @@ Example:
             {
                 "name": "voltage",
                 "translation": "Voltagem",
-                "total": 66,
+                "total": 15,
                 "values": [
                     {
-                        "value": "127 V",
-                        "total": 36,
+                        "value": "Bivolt",
+                        "total": 15,
                         "priceRange": {
-                            "min": 0.0,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "220 V",
-                        "total": 27,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "110V/127V",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 2649.0,
-                            "max": 4827.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "color",
-                "translation": "Cor",
-                "total": 66,
-                "values": [
-                    {
-                        "value": "Branco",
-                        "total": 33,
-                        "priceRange": {
-                            "min": 131.76,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "Inox",
-                        "total": 18,
-                        "priceRange": {
-                            "min": 2459.0,
-                            "max": 9517.04
-                        }
-                    },
-                    {
-                        "value": "Evox",
-                        "total": 12,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 5770.01
-                        }
-                    },
-                    {
-                        "value": "Preto",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 7329.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "capacity",
-                "translation": "Capacidade",
-                "total": 65,
-                "values": [
-                    {
-                        "value": "228 L",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 2859.0,
-                            "max": 2859.0
-                        }
-                    },
-                    {
-                        "value": "375 L",
-                        "total": 10,
-                        "priceRange": {
-                            "min": 2299.0,
-                            "max": 2699.1
-                        }
-                    },
-                    {
-                        "value": "400 L",
-                        "total": 5,
-                        "priceRange": {
-                            "min": 2519.1,
-                            "max": 2699.1
-                        }
-                    },
-                    {
-                        "value": "419 L",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 6382.5
-                        }
-                    },
-                    {
-                        "value": "443 L",
-                        "total": 6,
-                        "priceRange": {
-                            "min": 3149.1,
-                            "max": 3799.0
-                        }
-                    },
-                    {
-                        "value": "460 L",
-                        "total": 5,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 5571.01
-                        }
-                    },
-                    {
-                        "value": "462 L",
-                        "total": 7,
-                        "priceRange": {
-                            "min": 3059.1,
-                            "max": 3369.0
-                        }
-                    },
-                    {
-                        "value": "478 L",
-                        "total": 7,
-                        "priceRange": {
-                            "min": 4099.0,
-                            "max": 5471.51
-                        }
-                    },
-                    {
-                        "value": "500 L",
-                        "total": 4,
-                        "priceRange": {
-                            "min": 3489.0,
-                            "max": 4103.0
-                        }
-                    },
-                    {
-                        "value": "540 L",
-                        "total": 8,
-                        "priceRange": {
-                            "min": 4867.9,
-                            "max": 10446.4
-                        }
-                    },
-                    {
-                        "value": "560 L",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 10589.0,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "573 L",
-                        "total": 7,
-                        "priceRange": {
-                            "min": 4094.91,
-                            "max": 4795.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "type_of_refrigerator",
-                "translation": "Tipo de Refrigerador",
-                "total": 61,
-                "values": [
-                    {
-                        "value": "Duplex",
-                        "total": 29,
-                        "priceRange": {
-                            "min": 2384.91,
-                            "max": 5471.51
-                        }
-                    },
-                    {
-                        "value": "Inverse",
-                        "total": 25,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 9517.04
-                        }
-                    },
-                    {
-                        "value": "Side by Side",
-                        "total": 5,
-                        "priceRange": {
-                            "min": 131.76,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "French Door",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 10446.4,
-                            "max": 10446.4
+                            "min": 1325.75,
+                            "max": 31271.13
                         }
                     }
                 ]
@@ -354,459 +354,141 @@ Example:
             {
                 "name": "model",
                 "translation": "Modelo",
-                "total": 60,
+                "total": 15,
                 "values": [
                     {
-                        "value": "BRM56AK",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 3199.0,
-                            "max": 3369.0
-                        }
-                    },
-                    {
-                        "value": "BRE80",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 4094.91,
-                            "max": 4459.0
-                        }
-                    },
-                    {
-                        "value": "BRM45HB",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 2399.0,
-                            "max": 2609.91
-                        }
-                    },
-                    {
-                        "value": "BRM56AB",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 3059.1,
-                            "max": 3130.9
-                        }
-                    },
-                    {
-                        "value": "BRE80AK",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 4499.0,
-                            "max": 4795.0
-                        }
-                    },
-                    {
-                        "value": "BRM59AK",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 4342.0,
-                            "max": 5471.51
-                        }
-                    },
-                    {
-                        "value": "BRM57AB",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 3489.0,
-                            "max": 3549.0
-                        }
-                    },
-                    {
-                        "value": "BRM45HK",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 2649.0,
-                            "max": 2699.1
-                        }
-                    },
-                    {
-                        "value": "BRM54HBA",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 2599.0,
-                            "max": 2599.0
-                        }
-                    },
-                    {
-                        "value": "BRE57AK",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 3529.0,
-                            "max": 3799.0
-                        }
-                    },
-                    {
-                        "value": "BRO80AK",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 4949.1,
-                            "max": 5770.01
-                        }
-                    },
-                    {
-                        "value": "BRE57AB",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 3489.0,
-                            "max": 3489.0
-                        }
-                    },
-                    {
-                        "value": "BRE57",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 3149.1,
-                            "max": 3509.1
-                        }
-                    },
-                    {
-                        "value": "BRE59AK",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 5571.01
-                        }
-                    },
-                    {
-                        "value": "GRO80AB",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 10446.4,
-                            "max": 10446.4
-                        }
-                    },
-                    {
-                        "value": "BRM59AB",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 4099.0,
-                            "max": 4099.0
-                        }
-                    },
-                    {
-                        "value": "BRO80AB",
+                        "value": "KDL-32W655D",
                         "total": 1,
                         "priceRange": {
-                            "min": 4867.9,
-                            "max": 4867.9
+                            "min": 1325.75,
+                            "max": 1325.75
                         }
                     },
                     {
-                        "value": "BRO81AR",
+                        "value": "XBR-65X905F",
                         "total": 1,
                         "priceRange": {
-                            "min": 9517.04,
-                            "max": 9517.04
+                            "min": 6839.05,
+                            "max": 6839.05
                         }
                     },
                     {
-                        "value": "BRM44HB",
+                        "value": "XBR-55X905F",
                         "total": 1,
                         "priceRange": {
-                            "min": 2299.0,
-                            "max": 2299.0
+                            "min": 6568.67,
+                            "max": 6568.67
                         }
                     },
                     {
-                        "value": "BRM44",
+                        "value": "XBR-65A9G",
                         "total": 1,
                         "priceRange": {
-                            "min": 2384.91,
-                            "max": 2384.91
+                            "min": 17021.99,
+                            "max": 17021.99
                         }
                     },
                     {
-                        "value": "BRY59AE",
+                        "value": "XBR-65X805G",
                         "total": 1,
                         "priceRange": {
-                            "min": 6382.5,
-                            "max": 6382.5
+                            "min": 4690.8,
+                            "max": 4690.8
                         }
                     },
                     {
-                        "value": "BRO80AE",
+                        "value": "XBR-55X955G",
                         "total": 1,
                         "priceRange": {
-                            "min": 7329.0,
-                            "max": 7329.0
+                            "min": 5015.0,
+                            "max": 5015.0
                         }
                     },
                     {
-                        "value": "BRM54",
+                        "value": "XBR-65X905E",
                         "total": 1,
                         "priceRange": {
-                            "min": 2699.1,
-                            "max": 2699.1
+                            "min": 7810.43,
+                            "max": 7810.43
                         }
                     },
                     {
-                        "value": "BRY59",
+                        "value": "XBR-75X805G",
                         "total": 1,
                         "priceRange": {
-                            "min": 0.0,
-                            "max": 0.0
+                            "min": 7399.0,
+                            "max": 7399.0
                         }
                     },
                     {
-                        "value": "BRM54HB",
+                        "value": "XBR-65X955G",
                         "total": 1,
                         "priceRange": {
-                            "min": 2659.0,
-                            "max": 2659.0
+                            "min": 9214.05,
+                            "max": 9214.05
                         }
                     },
                     {
-                        "value": "BRM58AK",
+                        "value": "XBR-70X835F",
                         "total": 1,
                         "priceRange": {
-                            "min": 4103.0,
-                            "max": 4103.0
+                            "min": 8929.05,
+                            "max": 8929.05
                         }
                     },
                     {
-                        "value": "BRM56",
+                        "value": " XBR-85X905F",
                         "total": 1,
                         "priceRange": {
-                            "min": 3239.1,
-                            "max": 3239.1
+                            "min": 31271.13,
+                            "max": 31271.13
                         }
                     },
                     {
-                        "value": "BRY59AK",
+                        "value": "XBR-75X955G",
                         "total": 1,
                         "priceRange": {
-                            "min": 5199.0,
-                            "max": 5199.0
+                            "min": 12999.0,
+                            "max": 12999.0
                         }
                     },
                     {
-                        "value": "BRE59AB",
+                        "value": "XBR-85X955G",
                         "total": 1,
                         "priceRange": {
-                            "min": 4259.0,
-                            "max": 4259.0
+                            "min": 25499.0,
+                            "max": 25499.0
                         }
                     },
                     {
-                        "value": "BRE59",
+                        "value": "KD-65X7505D",
                         "total": 1,
                         "priceRange": {
-                            "min": 4229.91,
-                            "max": 4229.91
+                            "min": 7839.02,
+                            "max": 7839.02
                         }
                     },
                     {
-                        "value": "BVR28MB",
+                        "value": "KDL-48W655D",
                         "total": 1,
                         "priceRange": {
-                            "min": 2859.0,
-                            "max": 2859.0
-                        }
-                    },
-                    {
-                        "value": "BRM59",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 4139.91,
-                            "max": 4139.91
-                        }
-                    },
-                    {
-                        "value": "BRE80AB",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 4643.0,
-                            "max": 4643.0
-                        }
-                    },
-                    {
-                        "value": "BRO81",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 9517.04,
-                            "max": 9517.04
-                        }
-                    },
-                    {
-                        "value": "BRM44HK",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 2459.0,
-                            "max": 2459.0
-                        }
-                    },
-                    {
-                        "value": "BRS62",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 131.76,
-                            "max": 131.76
-                        }
-                    },
-                    {
-                        "value": "BRS75BR",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 462.5,
-                            "max": 462.5
+                            "min": 2547.02,
+                            "max": 2547.02
                         }
                     }
                 ]
             },
             {
-                "name": "type_of_defrost",
-                "translation": "Tipo de Degelo",
-                "total": 55,
+                "name": "type_",
+                "translation": "Tipo",
+                "total": 13,
                 "values": [
                     {
-                        "value": "Frost Free",
-                        "total": 55,
+                        "value": "Smart TV",
+                        "total": 13,
                         "priceRange": {
-                            "min": 0.0,
-                            "max": 10589.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "features",
-                "translation": "Atributos",
-                "total": 55,
-                "values": [
-                    {
-                        "value": "Inverse",
-                        "total": 16,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 10446.4
-                        }
-                    },
-                    {
-                        "value": "Painel Eletrônico",
-                        "total": 16,
-                        "priceRange": {
-                            "min": 2399.0,
-                            "max": 9517.04
-                        }
-                    },
-                    {
-                        "value": "Prateleiras Removíveis",
-                        "total": 5,
-                        "priceRange": {
-                            "min": 2499.0,
-                            "max": 2699.1
-                        }
-                    },
-                    {
-                        "value": "Controle eletrônico",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 4499.0,
-                            "max": 4795.0
-                        }
-                    },
-                    {
-                        "value": "Smart bar",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 4499.0,
-                            "max": 4795.0
-                        }
-                    },
-                    {
-                        "value": "Dispenser de Água",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 3489.0,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "Controle Eletrônico",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 4094.91,
-                            "max": 4201.9
-                        }
-                    },
-                    {
-                        "value": "Painel Touch",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 2699.1,
-                            "max": 3239.1
-                        }
-                    },
-                    {
-                        "value": "Dispenser De Água",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 3489.0,
-                            "max": 4103.0
-                        }
-                    },
-                    {
-                        "value": "Porta Latas",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 2699.1,
-                            "max": 2699.1
-                        }
-                    },
-                    {
-                        "value": "Turbo Freezer",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 2699.1,
-                            "max": 2699.1
-                        }
-                    },
-                    {
-                        "value": "Porta latas",
-                        "total": 1,
-                        "priceRange": {
-                            "min": 4259.0,
-                            "max": 4259.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "doors",
-                "translation": "Portas",
-                "total": 47,
-                "values": [
-                    {
-                        "value": "2 Portas",
-                        "total": 32,
-                        "priceRange": {
-                            "min": 2399.0,
-                            "max": 10589.0
-                        }
-                    },
-                    {
-                        "value": "2 portas",
-                        "total": 7,
-                        "priceRange": {
-                            "min": 131.76,
-                            "max": 4259.0
-                        }
-                    },
-                    {
-                        "value": "3 Portas",
-                        "total": 6,
-                        "priceRange": {
-                            "min": 4867.9,
-                            "max": 10446.4
-                        }
-                    },
-                    {
-                        "value": "3 portas",
-                        "total": 2,
-                        "priceRange": {
-                            "min": 0.0,
-                            "max": 9517.04
+                            "min": 1325.75,
+                            "max": 31271.13
                         }
                     }
                 ]
@@ -814,41 +496,37 @@ Example:
         ],
         "offers": [
             {
-                "url": "https://www.shopfacil.com.br/refrigerador-brastemp-brm45hk-375-l-inox-4980041/p",
-                "name": "Refrigerador Brastemp BRM45HK 375 L Inox 220 V",
+                "url": "https://www.shopfacil.com.br/smart-tv-sony-led-hd-32-com-motionflow-xr-240-x-protection-pro-e-wi-fi---kdl-32w655d-z-1171185325/p",
+                "name": "Smart TV Sony LED HD 32 com Motionflow XR 240, X-Protection PRO e Wi-Fi - KDL-32W655D/Z BIVOLT",
                 "available": true,
-                "img": "https://shopfacil.vteximg.com.br/arquivos/ids/61034669/5280038_1.jpg?v=637333809354700000",
-                "sku": "5280038",
-                "price": 2649.0,
-                "listPrice": 2649.0,
+                "img": "https://shopfacil.vteximg.com.br/arquivos/ids/53437746/6878377_1.jpg?v=637286088969130000",
+                "sku": "6878377",
+                "price": 1325.75,
+                "listPrice": 1325.75,
                 "priceDiscount": 0.0,
-                "installments": 10,
-                "installmentValue": 264.9,
-                "score": 3.25,
-                "productId": "4980041",
-                "sellerName": "pontofrio",
+                "installments": 1,
+                "installmentValue": 1325.75,
+                "score": 2.305081605911255,
+                "productId": "1171185325",
+                "sellerName": "004486803",
                 "categories": [
-                    "/Eletrodomésticos/Geladeira/",
-                    "/Eletrodomésticos/"
+                    "/Eletrônicos/TV/Smart TV/",
+                    "/Eletrônicos/TV/",
+                    "/Eletrônicos/"
                 ],
                 "normalizedCategories": [
-                    "/eletrodomesticos/geladeira/",
-                    "/eletrodomesticos/"
-                ],
-                "clusters": [
-                    "1791"
+                    "/eletronicos/tv/smart-tv/",
+                    "/eletronicos/tv/",
+                    "/eletronicos/"
                 ],
                 "label": [
                     {
                         "name": "voltage",
-                        "value": "220 V"
+                        "value": "Bivolt"
                     }
                 ],
                 "seller_list": [
-                    "Casas Bahia",
-                    "Extra",
-                    "Fast Shop",
-                    "Ponto Frio"
+                    "Fast Shop"
                 ]
             }
         ]
@@ -883,7 +561,9 @@ Response Body:
         "niche": "eletronicos",
         "entity": "Celular",
         "probability": "0.99996483",
-        "metadata": {}
+        "metadata": {},
+        "price_range": [],
+        "sort_behavior": null
     },
     "metadata_sorted_by_relevance": [
         "brand",
@@ -906,7 +586,7 @@ Request Body:
 ```json
 {
     "previous_context": "celular",
-    "input_text": "pode ser um vermelho da apple",
+    "input_text": "pode ser um vermelho da apple de até 5 mil reais",
     "enable_search": true,
     "search_size": 1
 }
@@ -916,8 +596,8 @@ Response Body:
 
 ```json
 {
-    "user_input": "pode ser um vermelho da apple",
-    "spellchecked_user_input": "pode ser um vermelho da Apple",
+    "user_input": "pode ser um vermelho da apple de até 5 mil reais",
+    "spellchecked_user_input": "pode ser um vermelho da Apple de até 5 mil reais",
     "previous_context": "celular",
     "relevant_fragment": "celular vermelho da Apple",
     "structured_data": {
@@ -927,7 +607,12 @@ Response Body:
         "metadata": {
             "brand": "Apple",
             "color": "Vermelho"
-        }
+        },
+        "price_range": [
+            0,
+            5000
+        ],
+        "sort_behavior": null
     },
     "metadata_sorted_by_relevance": [
         "brand",
@@ -938,21 +623,21 @@ Response Body:
         "color": "cor"
     },
     "search_result": {
-        "total_available": 14,
+        "total_available": 10,
         "search_size": 1,
-        "exact_search": true,
+        "exact_search": false,
         "metadata_filters": [
             {
                 "name": "substantive",
                 "translation": "Produto",
-                "total": 14,
+                "total": 10,
                 "values": [
                     {
                         "value": "Celular",
-                        "total": 14,
+                        "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     }
                 ]
@@ -960,30 +645,30 @@ Response Body:
             {
                 "name": "connectivity",
                 "translation": "Conectividade",
-                "total": 42,
+                "total": 30,
                 "values": [
                     {
                         "value": "4G",
-                        "total": 14,
+                        "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     },
                     {
                         "value": "Bluetooth",
-                        "total": 14,
+                        "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     },
                     {
                         "value": "WiFi",
-                        "total": 14,
+                        "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     }
                 ]
@@ -991,14 +676,14 @@ Response Body:
             {
                 "name": "brand",
                 "translation": "Marca",
-                "total": 14,
+                "total": 10,
                 "values": [
                     {
                         "value": "Apple",
-                        "total": 14,
+                        "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     }
                 ]
@@ -1006,46 +691,61 @@ Response Body:
             {
                 "name": "capacity",
                 "translation": "Capacidade",
-                "total": 14,
+                "total": 10,
                 "values": [
-                    {
-                        "value": "64 GB",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 3945.0,
-                            "max": 4642.48
-                        }
-                    },
                     {
                         "value": "64GB",
                         "total": 1,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 2849.05
+                            "min": 2999.0,
+                            "max": 2999.0
+                        }
+                    },
+                    {
+                        "value": "64 GB",
+                        "total": 3,
+                        "priceRange": {
+                            "min": 3789.61,
+                            "max": 4642.48
                         }
                     },
                     {
                         "value": "128 GB",
-                        "total": 5,
+                        "total": 3,
                         "priceRange": {
-                            "min": 3485.55,
-                            "max": 4499.0
+                            "min": 3999.0,
+                            "max": 4386.9
                         }
                     },
                     {
                         "value": "128GB",
                         "total": 1,
                         "priceRange": {
-                            "min": 3134.05,
-                            "max": 3134.05
+                            "min": 3299.0,
+                            "max": 3299.0
                         }
                     },
                     {
                         "value": "256 GB",
-                        "total": 4,
+                        "total": 2,
                         "priceRange": {
-                            "min": 3599.0,
-                            "max": 5393.9
+                            "min": 3704.05,
+                            "max": 4799.0
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "camera_resolution",
+                "translation": "Resolução de Câmera",
+                "total": 10,
+                "values": [
+                    {
+                        "value": "12 MP",
+                        "total": 10,
+                        "priceRange": {
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     }
                 ]
@@ -1053,14 +753,29 @@ Response Body:
             {
                 "name": "color",
                 "translation": "Cor",
-                "total": 14,
+                "total": 10,
                 "values": [
                     {
                         "value": "Vermelho",
-                        "total": 14,
+                        "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
+                            "min": 2999.0,
+                            "max": 4799.0
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "sim",
+                "translation": "Número de Chip",
+                "total": 10,
+                "values": [
+                    {
+                        "value": "Dual Chip",
+                        "total": 10,
+                        "priceRange": {
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     }
                 ]
@@ -1068,122 +783,52 @@ Response Body:
             {
                 "name": "type_",
                 "translation": "Tipo",
-                "total": 14,
+                "total": 10,
                 "values": [
                     {
                         "value": "Smartphone",
-                        "total": 14,
-                        "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "operating_system",
-                "translation": "Sistema Operacional",
-                "total": 14,
-                "values": [
-                    {
-                        "value": "iOS 13",
                         "total": 10,
                         "priceRange": {
-                            "min": 2849.05,
-                            "max": 5393.9
-                        }
-                    },
-                    {
-                        "value": "iOS 12",
-                        "total": 4,
-                        "priceRange": {
-                            "min": 3485.55,
-                            "max": 3945.0
+                            "min": 2999.0,
+                            "max": 4799.0
                         }
                     }
                 ]
             },
             {
-                "name": "product_weight",
-                "translation": "Peso do Produto",
-                "total": 14,
+                "name": "warranty",
+                "translation": "Garantia",
+                "total": 10,
                 "values": [
                     {
-                        "value": "194 g",
-                        "total": 11,
-                        "priceRange": {
-                            "min": 3485.55,
-                            "max": 5393.9
-                        }
-                    },
-                    {
-                        "value": "148 g",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 2849.05,
-                            "max": 3599.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "name",
-                "translation": "Nome",
-                "total": 14,
-                "values": [
-                    {
-                        "value": "iPhone 11",
-                        "total": 7,
-                        "priceRange": {
-                            "min": 4399.0,
-                            "max": 5393.9
-                        }
-                    },
-                    {
-                        "value": "iPhone XR",
-                        "total": 4,
-                        "priceRange": {
-                            "min": 3485.55,
-                            "max": 3945.0
-                        }
-                    },
-                    {
-                        "value": "iPhone SE",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 2849.05,
-                            "max": 3599.0
-                        }
-                    }
-                ]
-            },
-            {
-                "name": "screen_size",
-                "translation": "Tamanho da Tela",
-                "total": 14,
-                "values": [
-                    {
-                        "value": "4.7\"",
-                        "total": 3,
-                        "priceRange": {
-                            "min": 2849.05,
-                            "max": 3599.0
-                        }
-                    },
-                    {
-                        "value": "6.1\"",
+                        "value": "12 meses",
                         "total": 10,
                         "priceRange": {
-                            "min": 3485.55,
-                            "max": 4926.77
+                            "min": 2999.0,
+                            "max": 4799.0
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "front_camera_resolution",
+                "translation": "front_camera_resolution",
+                "total": 10,
+                "values": [
+                    {
+                        "value": "7 MP",
+                        "total": 5,
+                        "priceRange": {
+                            "min": 2999.0,
+                            "max": 3999.0
                         }
                     },
                     {
-                        "value": "6.1 polegadas",
-                        "total": 1,
+                        "value": "12 MP",
+                        "total": 5,
                         "priceRange": {
-                            "min": 5393.9,
-                            "max": 5393.9
+                            "min": 4199.0,
+                            "max": 4799.0
                         }
                     }
                 ]
@@ -1191,19 +836,19 @@ Response Body:
         ],
         "offers": [
             {
-                "url": "https://www.shopfacil.com.br/iphone-xr-apple-128gb-branco-61quot-12mp---ios-1170319189/p",
-                "name": "iPhone XR Apple 128GB Branco 6,1&quot; 12MP - iOS",
+                "url": "https://www.shopfacil.com.br/smartphone-apple-iphone-xr-vermelho-128-gb-5049664/p",
+                "name": "Smartphone Apple iPhone XR Vermelho 128 GB",
                 "available": true,
-                "img": "https://shopfacil.vteximg.com.br/arquivos/ids/60600760/6242353_1.jpg?v=637330552774100000",
-                "sku": "6242353",
-                "price": 3609.05,
-                "listPrice": 3609.05,
+                "img": "https://shopfacil.vteximg.com.br/arquivos/ids/60111147/5271702_1.jpg?v=637323681408970000",
+                "sku": "5271702",
+                "price": 3999.0,
+                "listPrice": 3999.0,
                 "priceDiscount": 0.0,
                 "installments": 10,
-                "installmentValue": 360.91,
-                "score": 3.25,
-                "productId": "1170319189",
-                "sellerName": "004443713",
+                "installmentValue": 399.9,
+                "score": 76.37367248535156,
+                "productId": "5049664",
+                "sellerName": "casasbahia",
                 "categories": [
                     "/Celular e Smartphone/Smartphone/",
                     "/Celular e Smartphone/"
@@ -1213,23 +858,19 @@ Response Body:
                     "/celular-e-smartphone/"
                 ],
                 "clusters": [
-                    "1363",
-                    "1627",
-                    "1634",
-                    "1642",
-                    "1654",
-                    "1730",
-                    "1774",
                     "1789",
-                    "1801"
+                    "1446",
+                    "1322",
+                    "1330"
                 ],
                 "seller_list": [
-                    "Magazine Luiza"
+                    "Casas Bahia",
+                    "Extra",
+                    "Fast Shop"
                 ]
             }
         ]
     }
 }
 ```
-
-
+---
