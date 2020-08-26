@@ -15,17 +15,20 @@ Natural language understanding (NLU) for digital sales intents and entities with
 
 All notable changes to this project will be documented in this session.
 
-## 1.1.0 - Unreleased
+## 1.1.0 - Released - 2020-08-26
 
-### Work in progress
-- process-user-input service:
-   - price selection entity recognition and search filtered
-   - most viewed entity recognition and search filtered
-   - best seller entity recognition and search filtered
-   - lower price entity recognition and search filtered
-   - best promotions entity recognition and search filtered
+### Added
+- included spell checking for /process-user-input.
+- available sku count for /process-user-input response.
+- metadata filters with sku counts for /process-user-input response.
+- user_email and user_phone collection in /process-user-input.
+- included price range recognition for /process-user-input.
+- included search behaviour (sort) recognition for /process-user-input.
 
-## [1.1.0beta] - Released - 2020-08-19
+### Fixed
+- fixed a bug when using non-semantic-search with page_size = 1
+
+## 1.1.0beta - Released - 2020-08-19
 
 ### Added
 - process-user-input service:
@@ -35,7 +38,7 @@ All notable changes to this project will be documented in this session.
 
 ### Changed
 - process-user-input service:
-   - page_size field request to search_size fied name
+   - page_size field request to search_size field name
 
 ## 1.0.0 - Released - 2020-08-14
 
