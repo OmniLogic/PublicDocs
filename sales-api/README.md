@@ -18,15 +18,17 @@ All notable changes to this project will be documented in this session.
 ## 1.1.0 - Released - 2020-08-26
 
 ### Added
-- included spell checking for /process-user-input.
-- available sku count for /process-user-input response.
-- metadata filters with sku counts for /process-user-input response.
-- user_email and user_phone collection in /process-user-input.
-- included price range recognition for /process-user-input.
-- included search behaviour (sort) recognition for /process-user-input.
+- process-user-input service:
+   - included spell checking for /process-user-input.
+   - available sku count for /process-user-input response.
+   - metadata filters with sku counts for /process-user-input response.
+   - user_email and user_phone collection in /process-user-input.
+   - included price range recognition for /process-user-input.
+   - included search behaviour (sort) recognition for /process-user-input.
 
 ### Fixed
-- fixed a bug when using non-semantic-search with page_size = 1
+- process-user-input service:
+   - fixed a bug when using non-semantic-search with page_size = 1
 
 ## 1.1.0beta - Released - 2020-08-19
 
