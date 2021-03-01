@@ -32,7 +32,7 @@
       "items": [
         {
           "label": "API",
-          "href": "/omnilogic/search-api"
+          "href": "search-api"
         },
         {
           "label": "Vtex IO",
