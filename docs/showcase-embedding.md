@@ -22,3 +22,23 @@ No dashboard da Omnilogic será possível configurar as vitrines por URL da loja
 - HTML customizável
 - CSS customizável  
 - Estado da vitrine (teste ou produção)
+
+# Configurações das vitrines
+
+Acessando o [Dashboard](https://panel.omnilogic.com.br/personalshop/vitrines) da Omnilogic você conseguirá configurar suas vitrines dinâmicas acessando *INTELLIGENT STORE > PERSONAL SHOP > VITRINES*
+
+Nesta página você conseguirá criar vitrines para cada URL da loja, e configurar diversos parâmetros como:
+- Tipo da recomendação
+- Comportamento Base do usuário
+  - Visitas
+  - Pedidos
+  - Adições ao carrinho
+- Filtros customizáveis de busca
+- Estado da vitrine
+  - Validação
+  - Produção
+
+
+## Customização
+
+TODO

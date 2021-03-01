@@ -24,15 +24,15 @@
     },
     {
       "label": "Vitrines",
+      "href": "showcase-embedding"
+    },
+    {
+      "label": "Busca",
       "type": "category",
       "items": [
         {
-          "label": "Incorporar Vitrine",
-          "href": "showcase-embedding"
-        },
-        {
-          "label": "Customizar Vitrines",
-          "href": "showcase-settings"
+          "label": "API",
+          "href": "https://dev.omnilogic.ai/omnilogic/search-api"
         }
       ]
     }
