@@ -13,7 +13,7 @@
           "href": "prd-info"
         },
         {
-          "label": "VTEX",
+          "label": "Vtex",
           "href": "vtex-integration"
         },
         {
@@ -32,7 +32,11 @@
       "items": [
         {
           "label": "API",
-          "href": "https://dev.omnilogic.ai/omnilogic/search-api"
+          "href": "/omnilogic/search-api"
+        },
+        {
+          "label": "Vtex IO",
+          "href": "search-vtex"
         }
       ]
     }
