@@ -13,4 +13,4 @@ Através deste tipo de integração as seguintes informações dos SKUs serão c
 
 ## Recomendações
 
-Esse tipo de integração é recomendado apenas no início da implantação das soluções do Intelligent Store, e deve ser mantida apenas caso não seja possível implantar a integração via [Webhook](webhook) ou [XML](/xml). Como esse tipo de integração depende da navegação dos usuários para a obtenção dos dados, não é possível garantir que todos os produtos/SKUs da lojam estejam sincronizados, o que pode acarretar na exibição de imagens, nomes e preços desatualizados nas vitrines, e-mails ou resultados de busca.
+Esse tipo de integração é recomendado apenas no início da implantação das soluções do Intelligent Store, e deve ser mantida apenas caso não seja possível implantar a integração via [Webhook](webhook) ou XML. Como esse tipo de integração depende da navegação dos usuários para a obtenção dos dados, não é possível garantir que todos os produtos/SKUs da loja estejam sincronizados, o que pode acarretar na exibição de imagens, nomes e preços desatualizados nas vitrines, e-mails ou resultados de busca.

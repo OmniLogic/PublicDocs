@@ -1,5 +1,7 @@
 # Incorporar Vitrines
 
+![Exemplo de vitrine](assets/showcase.png)
+
 Para exibir vitrines personalizadas em sua loja serão necessários dois passos:
 
 1. Adicionar DIVs ao HTML da página
@@ -12,16 +14,6 @@ Para incorporar as vitrines em uma página da loja, basta adicionar uma DIV com 
 ```html
 <div id="home-mais-vendidos"></div>
 ```
-
-## Configuração
-
-No dashboard da Omnilogic será possível configurar as vitrines por URL da loja. No nosso construtor a loja consegue definir diversos parâmetros como:
-
-- Tipo da recomendação de produtos
-- Título da Vitrine
-- HTML customizável
-- CSS customizável  
-- Estado da vitrine (teste ou produção)
 
 # Configurações das vitrines
 
@@ -37,8 +29,6 @@ Nesta página você conseguirá criar vitrines para cada URL da loja, e configur
 - Estado da vitrine
   - Validação
   - Produção
-
-
-## Customização
-
-TODO
+- Título da Vitrine
+- HTML customizável
+- CSS customizável  

@@ -1,12 +1,11 @@
 # Tracker
 
-![Diagrama Fluxo Tracker](assets/integration-tracker.png)
-
 Este breve documento explica como instalar o script de tracker e evoluir a inteligência da sua loja. Através da análise do comportamento do consumidor em sua loja, as ferramentas do Intelligent Store da Omnilogic mostrarão automaticamente produtos com maior probabilidade de compra, podendo atuar tanto nas páginas onde ele navega, quanto na captação de vendas por e-mail. 
 
+![Diagrama Fluxo Tracker](assets/integration-tracker.png)
 
 A instalação é bastante simples, bastando seguir o único passo abaixo:
-O script abaixo deve ser incluído dentro do <head></head> de todas as páginas navegadas pelos usuários, inclusive checkout e finalização de pedido, indicando o código da sua loja gerado pela Omnilogic na área em vermelho abaixo. Este código foi enviado para você juntamente com este documento. Quando o usuário estiver logado, devem ser informados também nome e e-mail através da variável oppuzUser:
+O script abaixo deve ser incluído dentro do <head></head> de todas as páginas navegadas pelos usuários, inclusive checkout e finalização de pedido, alterando `loja.js` pelo código da sua loja gerado pela Omnilogic. Este código foi enviado para você juntamente com este documento. Quando o usuário estiver logado, devem ser informados também nome e e-mail através da variável oppuzUser:
 
 ```js
 <script type="text/javascript">
