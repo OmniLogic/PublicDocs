@@ -10,7 +10,7 @@
       "items": [
         {
           "label": "Navegação",
-          "href": "prd-info.md"
+          "href": "prd-info"
         },
         {
           "label": "VTEX",
@@ -28,11 +28,11 @@
       "items": [
         {
           "label": "Incorporar Vitrine",
-          "href": "showcase-embedding.md"
+          "href": "showcase-embedding"
         },
         {
           "label": "Customizar Vitrines",
-          "href": "showcase-settings.md"
+          "href": "showcase-settings"
         }
       ]
     }
