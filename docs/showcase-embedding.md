@@ -14,6 +14,7 @@ Para incorporar as vitrines em uma página da loja, basta adicionar uma DIV com 
 ```html
 <div id="home-mais-vendidos"></div>
 ```
+<br />
 
 # Configurações das vitrines
 
