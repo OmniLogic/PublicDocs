@@ -7,7 +7,7 @@ O tipo de integração com a plataforma da Omnilogic depende das suites contrata
 
 ## Dados do catálogo
 
-Independente da suite, sendo elas Intelligent Store ou Product Cloud, a Omnilogic precisa possuir o catálogo do cliente em constante sincronia. Para isso recomendamos o tipo de integração via [WebHook](integration/webhook).
+Independente da suite, sendo elas Intelligent Store ou Product Cloud, a Omnilogic precisa possuir o catálogo do cliente em constante sincronia. Para isso recomendamos o tipo de integração via [WebHook](webhook).
 
 Caso esse tipo de integração não atenda o seu caso de uso, disponibilizamos outras formas como:
 
@@ -31,4 +31,4 @@ Entre outros, dependendo do tipo de integração contratado.
 
 Esses dados são de extrema importância para o correto funcionamento das ferramentas presentes no Intelligent Store.
 
-Para a captura desses dados, recomendamos a instalação de um JavaScript da Omnilogic nas lojas, que chamamos de [Tracker](integration/tracker)
+Para a captura desses dados, recomendamos a instalação de um JavaScript da Omnilogic nas lojas, que chamamos de [Tracker](tracker)
