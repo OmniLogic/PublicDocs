@@ -1,16 +1,40 @@
 {
   "sidebar": [
     {
-      "label": "Conceitos",
-      "href": "concepts"
-    },
-    {
-      "label": "Webhook",
-      "href": "webhook"
-    },
-    {
-      "label": "Tracker",
+      "label": "Incorporar Script",
       "href": "tracker"
+    },
+    {
+      "label": "Integração de Ofertas",
+      "type": "category",
+      "items": [
+        {
+          "label": "Navegação",
+          "href": "prd-info.md"
+        },
+        {
+          "label": "VTEX",
+          "href": "vtex-integration"
+        },
+        {
+          "label": "Webhook",
+          "href": "webhook"
+        }
+      ]
+    },
+    {
+      "label": "Vitrines",
+      "type": "category",
+      "items": [
+        {
+          "label": "Incorporar Vitrine",
+          "href": "showcase-embedding.md"
+        },
+        {
+          "label": "Customizar Vitrines",
+          "href": "showcase-settings.md"
+        }
+      ]
     }
   ]
 }
