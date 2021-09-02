@@ -87,6 +87,9 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
 | sku_metadata              | string[] | atributos que são utilizados para o matching de sku             |
 | sku_name_metadata         | string[] | atributos que são utilizados para a formação do nome do sku     |
 | filters_metadata          | string[] | atributos que estão configurados como filtros                   |
+| offer_status              | integer  | status da oferta                   |
+| status_description        | string   | descrição do status da oferta                   |
+| blocked_description       | string   | atributos que estão configurados como filtros                   |
 
 ### Exemplo de payload
 
@@ -135,6 +138,9 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
     "Cor",
     "Voltagem",
     "Acabamento"
-  ]
+  ],
+  "offer_status": 44,
+  "status_description": "A oferta foi publicada com sucesso!",
+  "blocked_description": null
 }
 ```
