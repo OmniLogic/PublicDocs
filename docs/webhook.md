@@ -89,7 +89,7 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
 | filters_metadata          | string[] | atributos que estão configurados como filtros                   |
 | offer_status              | integer  | status da oferta                   |
 | status_description        | string   | descrição do status da oferta                   |
-| blocked_description       | string   | atributos que estão configurados como filtros                   |
+| blocked_description       | string   | descrição caso a oferta for bloqueada                   |
 
 ### Exemplo de payload
 
