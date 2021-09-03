@@ -1,0 +1,18 @@
+{
+  "sidebar": [
+    {
+      "label": "Credentials",
+      "href": "authentication"
+    },
+    {
+      "type": "category",
+      "label": "Services",
+      "items": [
+        {
+          "label": "/process-user-input",
+          "href": "process_user_input"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "Omnilogic",
+  "teamId": "omnilogic",
+  "logoImg": "logo.png",
+  "bannerTitle": "Developer Hub",
+  "bannerDescription": "Welcome to Omnilogic developer hub.",
+  "theme": {
+    "primaryColor": "#243891",
+    "headerFontColor": "#fff"
+  },
+  "menus": [
+    {
+      "label": "About",
+      "href": "https://omnilogic.ai"
+    },
+    {
+      "label": "Carrer",
+      "href": "https://omnilogic.ai"
+    }
+  ],
+  "docs": [
+    {
+      "name": "Integration",
+      "description": "E-commerce Integration",
+      "href": "integration"
+    },
+    {
+      "name": "Search API",
+      "description": "Semantic Search for e-commerces",
+      "href": "search-api"
+    },
+    {
+      "name": "Sales Pipeline API",
+      "description": "Sales Pipeline API for personal assistant",
+      "href": "sales-pipeline-api"
+    },
+    {
+      "name": "TTS API",
+      "description": "TTS API for personal assistant",
+      "href": "tts-api"
+    }
+  ]
+}
