@@ -1,0 +1,44 @@
+{
+  "sidebar": [
+    {
+      "label": "Incorporar Script",
+      "href": "tracker"
+    },
+    {
+      "label": "Integração de Ofertas",
+      "type": "category",
+      "items": [
+        {
+          "label": "Navegação",
+          "href": "prd-info"
+        },
+        {
+          "label": "Vtex",
+          "href": "vtex-integration"
+        },
+        {
+          "label": "Webhook",
+          "href": "webhook"
+        }
+      ]
+    },
+    {
+      "label": "Vitrines",
+      "href": "showcase-embedding"
+    },
+    {
+      "label": "Busca",
+      "type": "category",
+      "items": [
+        {
+          "label": "API",
+          "href": "search-api"
+        },
+        {
+          "label": "Vtex IO",
+          "href": "search-vtex"
+        }
+      ]
+    }
+  ]
+}

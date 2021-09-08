@@ -10,7 +10,7 @@ A integração via Webhooks é a mais indicada, por ser a mais confiável com re
 
 O seguinte diagrama resume os sistemas envolvidos nesta integração:
 
-![Integração Webhook](/integration/integration-webhook.png)
+![Integração Webhook](assets/integration-webhook.png)
 
 Um detalhe importante é que o Webhook da Omnilogic, preferencialmente, recebe apenas o ID do oferta que sofreu alguma modificação, para logo após buscar as suas informações em uma API da loja. Esse fluxo foi arquitetado recebendo um ID e não os dados inteiros para possibilitar possíveis ressincronizações sem a necessidade de solicitar um reenvio por conta do cliente.
 
@@ -87,6 +87,9 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
 | sku_metadata              | string[] | atributos que são utilizados para o matching de sku             |
 | sku_name_metadata         | string[] | atributos que são utilizados para a formação do nome do sku     |
 | filters_metadata          | string[] | atributos que estão configurados como filtros                   |
+| offer_status              | integer  | status da oferta                   |
+| status_description        | string   | descrição do status da oferta                   |
+| blocked_description       | string   | descrição do bloqueio caso a oferta for bloqueada                   |
 
 ### Exemplo de payload
 
@@ -135,6 +138,9 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
     "Cor",
     "Voltagem",
     "Acabamento"
-  ]
+  ],
+  "offer_status": 44,
+  "status_description": "A oferta foi publicada com sucesso!",
+  "blocked_description": null
 }
 ```

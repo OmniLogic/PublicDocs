@@ -1,9 +1,0 @@
-{
-  "specificationUrl": "/",
-  "sidebar": [
-    {
-      "label": "Autenticação",
-      "href": "authentication"
-    }
-  ]
-}
