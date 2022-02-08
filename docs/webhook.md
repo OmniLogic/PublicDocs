@@ -68,28 +68,29 @@ Possuindo o ID, a Omnilogic utilizará uma API pública do cliente para obter to
 
 No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic retornar para o cliente um sku/produto enriquecido. Para isso, será utilizado um Webhook do cliente para o envio das seguintes informações, _podendo sofrer alterações de acordo com a necessidade do cliente_:
 
-| Propriedade               | Tipo     | Descrição                                                       |
-| ------------------------- | -------- | --------------------------------------------------------------- |
-| store                     | string   |                                                                 |
-| sku                       | string   | ID do SKU                                                       |
-| seller_id                 | string   | ID do seller                                                    |
-| seller_offer_id           | string   | ID da oferta no seller                                          |
-| entity                    | string   | tipo do produto                                                 |
-| metadata                  | string   | atributos extraídos                                             |
-| category_id               | string   | categoria pai                                                   |
-| subcategory_ids           | string[] | sub-categorias                                                  |
-| product_hash              | string   | hash agrupador de produtos                                      |
-| product_name              | string   | nome do produto                                                 |
-| sku_hash                  | string   | hash agrupador de sku                                           |
-| sku_name                  | string   | nome do sku                                                     |
-| product_matching_metadata | string[] | atributos que são utilizados para o matching de produto         |
-| product_name_metadata     | string[] | atributos que são utilizados para a formação do nome do produto |
-| sku_metadata              | string[] | atributos que são utilizados para o matching de sku             |
-| sku_name_metadata         | string[] | atributos que são utilizados para a formação do nome do sku     |
-| filters_metadata          | string[] | atributos que estão configurados como filtros                   |
-| offer_status              | integer  | status da oferta                   |
-| status_description        | string   | descrição do status da oferta                   |
-| blocked_description       | string   | descrição do bloqueio caso a oferta for bloqueada                   |
+| Propriedade               | Tipo     | Descrição                                                                           |
+| ------------------------- | -------- | ----------------------------------------------------------------------------------- |
+| store                     | string   | Nome da loja no Operations                                                          |
+| sku                       | string   | ID do SKU                                                                           |
+| seller_id                 | string   | ID do seller                                                                        |
+| seller_offer_id           | string   | ID da oferta no seller                                                              |
+| entity                    | string   | tipo do produto                                                                     |
+| metadata                  | string   | atributos extraídos                                                                 |
+| category_id               | string   | categoria pai                                                                       |
+| subcategory_ids           | string[] | sub-categorias                                                                      |
+| product_hash              | string   | hash agrupador de produtos                                                          |
+| product_name              | string   | nome do produto                                                                     |
+| sku_hash                  | string   | hash agrupador de sku                                                               |
+| sku_name                  | string   | nome do sku                                                                         |
+| product_matching_metadata | string[] | atributos que são utilizados para o matching de produto                             |
+| product_name_metadata     | string[] | atributos que são utilizados para a formação do nome do produto                     |
+| sku_metadata              | string[] | atributos que são utilizados para o matching de sku                                 |
+| sku_name_metadata         | string[] | atributos que são utilizados para a formação do nome do sku                         |
+| filters_metadata          | string[] | atributos que estão configurados como filtros                                       |
+| offer_status              | integer  | status da oferta                                                                    |
+| status_description        | string   | descrição do status da oferta                                                       |
+| blocked_description       | string   | descrição do bloqueio caso a oferta for bloqueada                                   |
+| matching_completed        | string   | indica que a oferta gerou um matching completo com todos os atributos               |
 
 ### Exemplo de payload
 
@@ -97,10 +98,10 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
 
 ```json
 {
-  "store": "{{STORE}}",
-  "sku": "{{SKU_ID}}",
-  "seller_id": "{{SELLER}}",
-  "seller_offer_id": "{{SELLER_OFFER_ID}}",
+  "store": "omnistore",
+  "sku": "1234",
+  "seller_id": "omni_seller",
+  "seller_offer_id": "omni_selleroffer_id",
   "entity": "Microondas",
   "metadata": {
     "Modelo": "MEF41",
@@ -109,8 +110,8 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
     "Voltagem": "220V",
     "Capacidade": "31 L"
   },
-  "category_id": "{{CATEGORY}}",
-  "subcategory_ids": ["{{SUB_CATEGORY}}", "{{SUB_CATEGORY}}"],
+  "category_id": "cod_123",
+  "subcategory_ids": ["sub_123", "sub_123"],
   "product_hash": "c7000c500becee4940ae3e225ff2ac67",
   "product_name": "Micro-ondas Electrolux 31L MEF41 Branco",
   "product_matching_metadata": ["Capacidade", "Marca", "Modelo", "Cor"],
@@ -141,6 +142,7 @@ No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic reto
   ],
   "offer_status": 44,
   "status_description": "A oferta foi publicada com sucesso!",
-  "blocked_description": null
+  "blocked_description": "Oferta bloquear por limite de caracteres!",
+  "matching_completed": false
 }
 ```
