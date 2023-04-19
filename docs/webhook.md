@@ -1,9 +1,9 @@
 # Webhook
 
-A integração via Webhooks é a mais indicada, por ser a mais confiável com relação ao sincronismos em "tempo real" entre os produtos da loja com a Omnilogic. Ela basicamente consiste em três componentes
+A integração via Webhooks é a mais indicada, por ser a mais confiável na manutenção de sincronismo entre os produtos da loja com a Omnilogic. Essa integração consiste em três componentes
 
-- Webhook Omnilogic: para receber notificações de criação/atualização de ofertas;
-- API de detalhamento do produto/sku: para pesquisar todos os dados da oferta previamente notificado;
+- Endpoint Omnilogic: para receber notificações de criação/atualização de ofertas;
+- Endpoint do Cliente para detalhamento do produto/sku: disponibiliza todos os dados da oferta previamente notificada;
 - Webhook de retorno: para o recebimento das ofertas enriquecidas pelo Product Cloud\*.
 
 \*Este ultimo componente só é necessário para os clientes que contrataram os serviços do Product Cloud.
@@ -12,7 +12,7 @@ O seguinte diagrama resume os sistemas envolvidos nesta integração:
 
 ![Integração Webhook](assets/integration-webhook.png)
 
-Um detalhe importante é que o Webhook da Omnilogic, preferencialmente, recebe apenas o ID do oferta que sofreu alguma modificação, para logo após buscar as suas informações em uma API da loja. Esse fluxo foi arquitetado recebendo um ID e não os dados inteiros para possibilitar possíveis ressincronizações sem a necessidade de solicitar um reenvio por conta do cliente.
+Um detalhe importante é que o Webhook da Omnilogic, preferencialmente, recebe apenas o ID da oferta que sofreu alguma modificação, para logo após buscar as suas informações no Endpoint de detalhamento de SKU em uma API da loja. Esse fluxo foi arquitetado recebendo um ID e não os dados inteiros para possibilitar possíveis ressincronizações sem a necessidade de solicitar um reenvio por conta do cliente.
 
 Entretanto, mudanças nessa estrutura **são possíveis**, caso essa arquitetura não atenda ao caso de uso da loja.
 
@@ -22,7 +22,7 @@ O cliente deverá notificar a Omnilogic sobre qualquer tipo de criação/atualiz
 
 Para isso será necessário realizar uma requisição do tipo POST para a seguinte URL:
 
-https://catalog-integration.omnilogic.com.br/{{STORE}}/offer?key={{KEY}}
+https://catalog-integration.omnilogic.com.br/store/{STORE}/notification
 
 Contendo no body um JSON com as seguintes propriedades:
 
@@ -30,6 +30,13 @@ Contendo no body um JSON com as seguintes propriedades:
 | ----------- | ------ | ------------ |
 | store       | string | Nome da loja |
 | id          | string | ID da oferta |
+
+E com o header de autorização:
+
+```
+Header: Authorization
+Valor: {{CHAVE_DE_ACESSO}}
+```
 
 \*A chave de acesso deve ser solicitada
 
@@ -66,7 +73,7 @@ Possuindo o ID, a Omnilogic utilizará uma API pública do cliente para obter to
 
 ## Payload de Retorno
 
-No caso do Product Cloud, existe uma integração inversa, onde o Omnilogic retornar para o cliente um sku/produto enriquecido. Para isso, será utilizado um Webhook do cliente para o envio das seguintes informações, _podendo sofrer alterações de acordo com a necessidade do cliente_:
+No caso do Product Cloud, existe uma integração inversa, onde a Omnilogic retorna para o cliente um sku/produto enriquecido. Para isso, será utilizado um Webhook do cliente para o envio das seguintes informações, _podendo sofrer alterações de acordo com a necessidade do cliente_:
 
 | Propriedade               | Tipo     | Descrição                                                                           |
 | ------------------------- | -------- | ----------------------------------------------------------------------------------- |
