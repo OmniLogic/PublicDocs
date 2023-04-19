@@ -153,3 +153,4 @@ No caso do Product Cloud, existe uma integração inversa, onde a Omnilogic reto
   "matching_completed": false
 }
 ```
+
